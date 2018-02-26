@@ -16,38 +16,21 @@ h1 {
 
 section {
     height: 500px;
-    background-color: lightgrey;
-}
-
-footer {
-    background-color: lightblue;
-}
-
-footer img,
-footer h2,
-.contact-box {
-    display: inline-block;
-}
-
-article {
-    padding:  50px;
-}
-.contact-box {
-    background-color: indianred;
 }
 
 nav {
     margin: 0 auto;
     position: relative;
-    margin-top: 50px;
     height: 400px;
     width: 400px;
-    /*background-color: lightgrey;*/
 }
 
 [class|=nav]  {
     align-items: center;
     text-align: center;
+    font-size: 1.3rem;
+    /*color: white;*/
+    padding-top: 10px;
     position: absolute;
     margin: 0 auto;
     border-radius: 100%;
@@ -113,6 +96,7 @@ input[type=checkbox]:checked ~ .nav-1{
     width: 100px;
     top: 150px;
     left: 150px;
+
 }
 
 input[type=checkbox]:checked ~ .nav-2{
@@ -138,17 +122,46 @@ input[type=checkbox]:checked ~ .nav-4{
 
 .nav-1:hover {
     background-color: #212F3D;
+    color: white;
     transition:  .05s;
 }
 .nav-2:hover {
     background-color: #212F3D;
+    color: white;
     transition:  .05s;
 }
 .nav-3:hover {
     background-color: #212F3D;
+    color: white;
     transition:  .05s;
 }
 .nav-4:hover {
     background-color: #212F3D;
+    color: white;
     transition:  .05s;
+}
+
+footer {
+    background-color: lightblue;
+}
+
+footer img,
+footer h2,
+.contact-box {
+    display: inline-block;
+}
+
+footer h2 {
+    font-size: 2rem;
+}
+
+.contact-box {
+     background-color: indianred;
+     padding: 5px;
+     margin: 50px;
+     font-size: 1.8rem;
+ }
+
+.contact-head {
+    font-size: 1.2rem;
 }
