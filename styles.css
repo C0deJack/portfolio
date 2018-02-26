@@ -7,3 +7,31 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 10px;
 }
+
+h1 {
+    font-size: 3rem;
+    padding: 30px;
+    margin: 0;
+}
+
+section {
+    height: 500px;
+    background-color: lightgrey;
+}
+
+footer {
+    background-color: lightblue;
+}
+
+footer img,
+footer h2,
+.contact-box {
+    display: inline-block;
+}
+
+article {
+    padding:  50px;
+}
+.contact-box {
+    background-color: indianred;
+}
