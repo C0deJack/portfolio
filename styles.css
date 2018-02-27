@@ -11,10 +11,10 @@ body {
 /*=====================HEADER - NAV========================*/
 
 h1 {
+    position: fixed;
     font-size: 2rem;
     padding: 10px;
     margin: 0;
-    position: fixed;
     left: 10px;
     top: 10px;
     z-index: 5;
@@ -48,17 +48,17 @@ nav {
     color: #FFFFFF;
 }
 
-.nav-1 {
+.nav-portfolio {
     top: 50px;
     left: 45%;
 }
 
-.nav-2 {
+.nav-about {
     top: 150px;
     left: 15%;
 }
 
-.nav-3 {
+.nav-contact {
     top: 150px;
     left: 75%;
 }
