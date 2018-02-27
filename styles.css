@@ -20,6 +20,15 @@ h1 {
     z-index: 5;
 }
 
+h1 a {
+      color: #000000;
+      text-decoration: none;
+  }
+
+h1 a:hover {
+    color: #ABB2B9;
+}
+
 header {
     height: 500px;
 }
@@ -49,17 +58,17 @@ nav {
 }
 
 .nav-portfolio {
-    top: 50px;
+    top: 60px;
     left: 45%;
 }
 
 .nav-about {
-    top: 150px;
+    top: 160px;
     left: 15%;
 }
 
 .nav-contact {
-    top: 150px;
+    top: 160px;
     left: 75%;
 }
 
@@ -88,8 +97,20 @@ h3 {
     width: 60px;
     height: 60px;
     bottom: 80px;
+    border-radius: 5px;
     right: 0;
     z-index: 10;
+}
+
+.side-tab img {
+    position: absolute;
+    left: 7px;
+    top: 6px;
+    /*margin: 0 auto;*/
+}
+
+.side-tab:hover {
+    background-color: #ABB2B9;
 }
 
 /*=====================SECTION - ABOUT=======================*/
@@ -169,3 +190,26 @@ footer div {
 }
 
 /*=====================RESPONSIVE========================*/
+
+@media screen and (max-width: 1000px){
+
+}
+
+@media screen and (max-width: 900px){
+
+}
+
+@media screen and (max-width: 500px){
+    .nav-portfolio {
+        left: 28%;
+    }
+
+    .nav-about {
+        left: 2%;
+    }
+
+    .nav-contact {
+        left: 52%;
+    }
+
+}
