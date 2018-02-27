@@ -176,13 +176,15 @@ footer {
 .contact-box {
     display: inline-block;
     vertical-align: top;
-     padding: 5px;
-     margin: 50px 50px 50px 200px;
-     font-size: 1.8rem;
+     padding: 50px 50px 50px 150px;
+    width: 40%;
+    margin: 0 auto;
+     /*margin: 50px 50px 50px 200px;*/
+     font-size: 1.6rem;
  }
 
 footer div {
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 .contact-head {
@@ -192,10 +194,16 @@ footer div {
 /*=====================RESPONSIVE========================*/
 
 @media screen and (max-width: 1000px){
+    .contact-box {
+        margin-left: 100px;
+    }
 
 }
 
 @media screen and (max-width: 900px){
+    .contact-box {
+        margin-left: 50px;
+    }
 
 }
 
