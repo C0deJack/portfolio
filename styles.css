@@ -9,34 +9,33 @@ body {
 }
 
 h1 {
-    font-size: 3rem;
-    padding: 30px;
+    font-size: 2rem;
+    padding: 10px;
     margin: 0;
-    position: absolute;
+    position: fixed;
+    left: 10px;
+    top: 10px;
     z-index: 2;
 }
 
-section {
-    background: url(assets/ocean.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
+header {
     height: 500px;
 }
 
 nav {
     margin: 0 auto;
+    background-color: lightslategrey;
     position: relative;
-    height: 100%;
-    width: 400px;
+    height: 300px;
+    width: 95%;
 }
 
 [class|=nav]  {
     align-items: center;
     text-align: center;
-    vertical-align: text-bottom;
     font-size: 1.3rem;
-    padding-top: 10px;
+    color: rgba(0,0,0,0);
+    padding-top: 50px;
     position: absolute;
     margin: 0 auto;
     border-radius: 100%;
@@ -46,45 +45,30 @@ nav {
     transition-timing-function: ease-in-out;
 }
 
-.nav-a {
-    top:  175px;
-    left:  175px;
-}
-
 .nav-1 {
     z-index: 10;
-    height: 100px;
-    width: 100px;
-    top: 150px;
-    left: 150px;
-    background-color: rgba(0,0,0,0.14);
+    height: 120px;
+    width: 120px;
+    top: 50px;
+    left: 40%;
+    background-color: rgba(0,0,0,0.2);
 }
 
 .nav-2 {
     z-index: 9;
-    height: 200px;
-    width: 200px;
-    top: 100px;
-    left: 100px;
-    background-color: rgba(0,0,0,0.13);
+    height: 120px;
+    width: 120px;
+    top: 150px;
+    left: 10%;
+    background-color: rgba(0,0,0,0.2);
 }
 
 .nav-3 {
-    z-index: 8;
-    height: 300px;
-    width: 300px;
-    top: 50px;
-    left: 50px;
-    background-color: rgba(0,0,0,0.12);
-}
-
-.nav-4 {
-    z-index: 7;
-    height: 400px;
-    width: 400px;
-    top: 0;
-    left: 0;
-    background-color: rgba(0,0,0,0.1);
+    height: 120px;
+    width: 120px;
+    top: 150px;
+    left: 70%;
+    background-color: rgba(0,0,0,0.2);
 }
 
 .nav-1:hover {
@@ -102,12 +86,19 @@ nav {
     color: white;
     transition:  .05s;
 }
-.nav-4:hover {
-    background-color: rgba(0,0,0,0.7);
-    color: white;
-    transition:  .05s;
+
+.side-tab {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    top: 500px;
+    right: 0;
+    background-color: indianred;
 }
 
+h3 {
+    float: right;
+}
 footer img,
 footer h2,
 .contact-box {
@@ -119,7 +110,7 @@ footer h2 {
 }
 
 .contact-box {
-     background-color: indianred;
+     /*background-color: indianred;*/
      padding: 5px;
      margin: 50px;
      font-size: 1.8rem;
