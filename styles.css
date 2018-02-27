@@ -87,7 +87,7 @@ h3 {
     position: fixed;
     width: 60px;
     height: 60px;
-    top: 320px;
+    bottom: 80px;
     right: 0;
     z-index: 10;
 }
@@ -96,7 +96,15 @@ h3 {
 
 section {
     min-height: 390px;
-    background-color: #EAECEE;
+    position: relative;
+}
+.cloud-video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    background-size: cover;
+    z-index: -1;
 }
 
 section div {
@@ -127,10 +135,15 @@ article {
 }
 
 article div {
+    width: 410px;
+    height: 260px;
+    margin: 0 auto;
+    background-color: #EAECEE;
+}
+
+main img {
     width: 400px;
     height: 250px;
-    margin: 10px 0 0 auto;
-    background-color: #EAECEE;
 }
 
 /*=====================FOOTER - CONTACT========================*/
