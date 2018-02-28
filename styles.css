@@ -4,7 +4,7 @@
 
 body {
     margin: 0;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Futura", Futura, Helvetica, Arial, sans-serif;
     font-size: 10px;
 }
 
@@ -20,13 +20,22 @@ h1 {
     z-index: 5;
 }
 
+h1 a {
+      color: #000000;
+      text-decoration: none;
+  }
+
+h1 a:hover {
+    color: #ABB2B9;
+}
+
 header {
-    height: 500px;
+    height: 450px;
 }
 
 nav {
     position: relative;
-    height: 350px;
+    height: 365px;
 }
 
 [class|=nav]  {
@@ -49,17 +58,17 @@ nav {
 }
 
 .nav-portfolio {
-    top: 50px;
+    top: 60px;
     left: 45%;
 }
 
 .nav-about {
-    top: 150px;
+    top: 160px;
     left: 15%;
 }
 
 .nav-contact {
-    top: 150px;
+    top: 160px;
     left: 75%;
 }
 
@@ -80,6 +89,7 @@ nav {
 }
 
 h3 {
+    font-weight: normal;
     margin: 5px 0;
 }
 
@@ -88,84 +98,191 @@ h3 {
     width: 60px;
     height: 60px;
     bottom: 80px;
-    right: 0;
+    border-radius: 5px;
+    right: 18px;
     z-index: 10;
+}
+
+.side-tab img {
+    position: absolute;
+    left: 7px;
+    top: 6px;
+}
+
+.side-tab:hover {
+    background-color: #ABB2B9;
 }
 
 /*=====================SECTION - ABOUT=======================*/
 
 section {
     min-height: 390px;
+    background-color: #EAECEE;
     position: relative;
-}
-.cloud-video {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    background-size: cover;
-    z-index: -1;
 }
 
 section div {
     padding: 70px 0 0;
     font-size: 1.5rem;
+    line-height: 150%;
     overflow: auto;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.icons {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.icons div {
+    display: inline-block;
+    width: 19%;
+    height: 100%;
+}
+
+section img {
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
 }
 
 /*=====================MAIN - PORTFOLIO========================*/
 
 main {
-    overflow: auto;
-  padding-top: 60px;
+    width: 100%;
 }
 
-main div {
-    width: 1600px;
+.portfolio-box {
+    width: 1700px;
     overflow: auto;
     margin: 0 auto;
-    padding: 30px;
+    margin-top: 80px;
 }
 
 article {
-    height: 500px;
-    width: 450px;
+    height: 400px;
+    width: 33%;
     float: left;
-    margin: 10px;
+    margin-bottom: 65px;
 }
 
-article div {
-    width: 410px;
+.img-holder {
+    width: 390px;
     height: 260px;
     margin: 0 auto;
-    background-color: #EAECEE;
 }
 
-main img {
-    width: 400px;
-    height: 250px;
+.txt-holder {
+    width: 390px;
+    height: 150px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+main img,
+.portfolio-video {
+    width: 100%;
+    height: 100%;
 }
 
 /*=====================FOOTER - CONTACT========================*/
 
 footer {
     background-color: #EAECEE;
+    font-size: 1.6rem;
+    line-height: 150%;
 }
 
 .contact-box {
     display: inline-block;
     vertical-align: top;
-     padding: 5px;
-     margin: 50px 50px 50px 200px;
-     font-size: 1.8rem;
+    padding: 50px 50px 50px 150px;
+    width: 49%;
+    margin: 0 auto;
+     font-size: 1.6rem;
  }
 
-footer div {
-    font-size: 2rem;
+.contact-head {
+    font-size: 1rem;
+    margin-bottom: 15px;
 }
 
-.contact-head {
-    font-size: 1.2rem;
+footer a {
+    color: #000000;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ABB2B9;
 }
 
 /*=====================RESPONSIVE========================*/
+
+@media screen and (max-width: 1400px){
+
+    .portfolio-box {
+        width: 950px;
+
+    }
+    article {
+        width: 50%;
+    }
+
+}
+
+@media screen and (max-width: 900px){
+
+    .portfolio-box {
+        width: 850px;
+    }
+
+    .icons div {
+        width: 18%;
+    }
+
+    section img {
+        height: 75px;
+        width: 75px;
+    }
+
+}
+
+@media screen and (max-width: 730px){
+
+    .contact-box {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .nav-portfolio {
+        left: 28%;
+    }
+
+    .nav-about {
+        left: 2%;
+    }
+
+    .nav-contact {
+        left: 52%;
+    }
+
+    .portfolio-box {
+        width: 400px;
+    }
+
+    article {
+        width: 100%;
+    }
+
+    section img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .txt-holder {
+        padding: 10px;
+        margin-top: -15px;
+    }
+
+}
