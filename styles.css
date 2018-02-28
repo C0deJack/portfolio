@@ -151,7 +151,6 @@ section img {
 
 main {
     width: 100%;
-    overflow: auto;
 }
 
 .portfolio-box {
@@ -224,6 +223,7 @@ footer a:hover {
 
     .portfolio-box {
         width: 950px;
+
     }
     article {
         width: 50%;
