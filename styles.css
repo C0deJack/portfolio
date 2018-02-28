@@ -107,7 +107,6 @@ h3 {
     position: absolute;
     left: 7px;
     top: 6px;
-    /*margin: 0 auto;*/
 }
 
 .side-tab:hover {
@@ -120,14 +119,6 @@ section {
     min-height: 390px;
     background-color: #EAECEE;
     position: relative;
-}
-.cloud-video {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    background-size: cover;
-    z-index: -1;
 }
 
 section div {
@@ -161,22 +152,20 @@ section img {
 main {
     width: 100%;
     overflow: auto;
-    /*padding-top: 60px;*/
 }
 
-main div {
+.portfolio-box {
     width: 1700px;
-    /*overflow: auto;*/
+    overflow: auto;
     margin: 0 auto;
     margin-top: 80px;
 }
 
 article {
     height: 400px;
-    width: 28%;
+    width: 33%;
     float: left;
-    background-color: #EAECEE;
-    /*margin: 20px;*/
+    margin-bottom: 65px;
 }
 
 .img-holder {
@@ -192,36 +181,28 @@ article {
     font-size: 1.1rem;
 }
 
-main img {
+main img,
+.portfolio-video {
     width: 100%;
     height: 100%;
-}
-
-.roller-video {
-    left: 0;
-    top: 0;
-    width: 100%;
 }
 
 /*=====================FOOTER - CONTACT========================*/
 
 footer {
     background-color: #EAECEE;
+    font-size: 1.6rem;
+    line-height: 150%;
 }
 
 .contact-box {
     display: inline-block;
     vertical-align: top;
-     padding: 50px 50px 50px 150px;
-    width: 40%;
+    padding: 50px 50px 50px 150px;
+    width: 49%;
     margin: 0 auto;
      font-size: 1.6rem;
  }
-
-footer div {
-    font-size: 1.6rem;
-    line-height: 150%;
-}
 
 .contact-head {
     font-size: 1rem;
@@ -239,29 +220,41 @@ footer a:hover {
 
 /*=====================RESPONSIVE========================*/
 
-@media screen and (max-width: 1000px){
-    .contact-box {
-        margin-left: 100px;
-    }
+@media screen and (max-width: 1400px){
 
-    main div {
+    .portfolio-box {
         width: 950px;
+    }
+    article {
+        width: 50%;
     }
 
 }
 
 @media screen and (max-width: 900px){
-    .contact-box {
-        margin-left: 50px;
+
+    .portfolio-box {
+        width: 850px;
     }
 
-    main div {
-        width: 850px;
+    .icons div {
+        width: 18%;
+    }
+
+    section img {
+        height: 75px;
+        width: 75px;
     }
 
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 730px){
+
+    .contact-box {
+        width: 100%;
+        padding: 30px;
+    }
+
     .nav-portfolio {
         left: 28%;
     }
@@ -274,8 +267,22 @@ footer a:hover {
         left: 52%;
     }
 
-    main div {
+    .portfolio-box {
         width: 400px;
+    }
+
+    article {
+        width: 100%;
+    }
+
+    section img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .txt-holder {
+        padding: 10px;
+        margin-top: -15px;
     }
 
 }
