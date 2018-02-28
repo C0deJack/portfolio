@@ -4,7 +4,7 @@
 
 body {
     margin: 0;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Futura", Futura, Helvetica, Arial, sans-serif;
     font-size: 10px;
 }
 
@@ -30,12 +30,12 @@ h1 a:hover {
 }
 
 header {
-    height: 500px;
+    height: 450px;
 }
 
 nav {
     position: relative;
-    height: 350px;
+    height: 365px;
 }
 
 [class|=nav]  {
@@ -89,6 +89,7 @@ nav {
 }
 
 h3 {
+    font-weight: normal;
     margin: 5px 0;
 }
 
@@ -98,7 +99,7 @@ h3 {
     height: 60px;
     bottom: 80px;
     border-radius: 5px;
-    right: 0;
+    right: 18px;
     z-index: 10;
 }
 
@@ -117,6 +118,7 @@ h3 {
 
 section {
     min-height: 390px;
+    background-color: #EAECEE;
     position: relative;
 }
 .cloud-video {
@@ -131,7 +133,10 @@ section {
 section div {
     padding: 70px 0 0;
     font-size: 1.5rem;
+    line-height: 150%;
     overflow: auto;
+    margin: 0 auto;
+    width: 90%;
 }
 
 /*=====================MAIN - PORTFOLIO========================*/
@@ -145,7 +150,7 @@ main div {
     width: 1600px;
     overflow: auto;
     margin: 0 auto;
-    padding: 30px;
+    padding: 1%;
 }
 
 article {
@@ -167,6 +172,12 @@ main img {
     height: 250px;
 }
 
+.roller-video {
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
 /*=====================FOOTER - CONTACT========================*/
 
 footer {
@@ -179,16 +190,26 @@ footer {
      padding: 50px 50px 50px 150px;
     width: 40%;
     margin: 0 auto;
-     /*margin: 50px 50px 50px 200px;*/
      font-size: 1.6rem;
  }
 
 footer div {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    line-height: 150%;
 }
 
 .contact-head {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+footer a {
+    color: #000000;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ABB2B9;
 }
 
 /*=====================RESPONSIVE========================*/
