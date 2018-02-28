@@ -139,37 +139,62 @@ section div {
     width: 90%;
 }
 
+.icons {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.icons div {
+    display: inline-block;
+    width: 19%;
+    height: 100%;
+}
+
+section img {
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+}
+
 /*=====================MAIN - PORTFOLIO========================*/
 
 main {
+    width: 100%;
     overflow: auto;
-  padding-top: 60px;
+    /*padding-top: 60px;*/
 }
 
 main div {
-    width: 1600px;
-    overflow: auto;
+    width: 1700px;
+    /*overflow: auto;*/
     margin: 0 auto;
-    padding: 1%;
+    margin-top: 80px;
 }
 
 article {
-    height: 500px;
-    width: 450px;
+    height: 400px;
+    width: 28%;
     float: left;
-    margin: 10px;
+    background-color: #EAECEE;
+    /*margin: 20px;*/
 }
 
-article div {
-    width: 410px;
+.img-holder {
+    width: 390px;
     height: 260px;
     margin: 0 auto;
-    background-color: #EAECEE;
+}
+
+.txt-holder {
+    width: 390px;
+    height: 150px;
+    margin: 0 auto;
+    font-size: 1.1rem;
 }
 
 main img {
-    width: 400px;
-    height: 250px;
+    width: 100%;
+    height: 100%;
 }
 
 .roller-video {
@@ -219,11 +244,19 @@ footer a:hover {
         margin-left: 100px;
     }
 
+    main div {
+        width: 950px;
+    }
+
 }
 
 @media screen and (max-width: 900px){
     .contact-box {
         margin-left: 50px;
+    }
+
+    main div {
+        width: 850px;
     }
 
 }
@@ -239,6 +272,10 @@ footer a:hover {
 
     .nav-contact {
         left: 52%;
+    }
+
+    main div {
+        width: 400px;
     }
 
 }
