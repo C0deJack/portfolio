@@ -12,7 +12,7 @@ body {
 
 h1 {
     position: fixed;
-    font-size: 2rem;
+    font-size: 1.9rem;
     padding: 10px;
     margin: 0;
     left: 10px;
@@ -30,7 +30,8 @@ h1 a:hover {
 }
 
 header {
-    height: 450px;
+    height: 600px;
+    background-color: #EAECEE;
 }
 
 nav {
@@ -41,7 +42,7 @@ nav {
 [class|=nav]  {
     text-align: center;
     font-size: 1.3rem;
-    color: #ABB2B9;
+    color: #FFDD30;
     padding-top: 80px;
     position: absolute;
     border-radius: 100%;
@@ -49,43 +50,48 @@ nav {
     width: 180px;
     transition: .8s;
     transition-timing-function: ease-in-out;
-    background-color: #ABB2B9;
+    background-color: #FFDD30;
 }
 
 [class|=nav] a {
     text-decoration: none;
-    color: #FFFFFF;
+    color: #FFDD30;
 }
 
 .nav-portfolio {
-    top: 60px;
-    left: 45%;
+    top: 180px;
+    left: 42%;
 }
 
 .nav-about {
-    top: 160px;
-    left: 15%;
+    top: 280px;
+    left: 11%;
 }
 
 .nav-contact {
-    top: 160px;
-    left: 75%;
+    top: 280px;
+    left: 71%;
 }
 
 [class|=nav]:hover {
-    background-color: #212F3D;
-    color: #FFFFFF;
+    background-color: black;
+    color: #FFDD30;
     transition:  .1s;
 }
 
 [class|=nav] a:hover {
-    color: #FFFFFF;
+    color: #FFDD30;
 }
 
 .phone {
-    float: right;
-    margin-right: 20px;
-    font-size: 1.1rem;
+    position: absolute;
+    right: -70px;
+    top: 125px;
+    font-size: 1.01rem;
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    transition:  .7s;
 }
 
 h3 {
@@ -95,18 +101,18 @@ h3 {
 
 .side-tab {
     position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 80px;
-    border-radius: 5px;
+    width: 65px;
+    height: 65px;
+    bottom: 30px;
+    border-radius:100%;
     right: 18px;
     z-index: 10;
 }
 
 .side-tab img {
     position: absolute;
-    left: 7px;
-    top: 6px;
+    left: 9px;
+    top: 5px;
 }
 
 .side-tab:hover {
@@ -116,34 +122,35 @@ h3 {
 /*=====================SECTION - ABOUT=======================*/
 
 section {
-    min-height: 390px;
-    background-color: #EAECEE;
+    background-color: #FFDD30;
     position: relative;
 }
 
 section div {
-    padding: 70px 0 0;
-    font-size: 1.5rem;
+    padding: 70px 70px 0;
+    font-size: 1.2rem;
     line-height: 150%;
-    overflow: auto;
     margin: 0 auto;
+    margin-bottom: 20px;
     width: 90%;
 }
 
 .icons {
     margin: 0 auto;
-    padding: 20px;
+    width: 80%;
+    padding: 25px;
 }
 
 .icons div {
     display: inline-block;
-    width: 19%;
+    width: 13%;
     height: 100%;
+    padding: 0;
 }
 
 section img {
-    height: 100px;
-    width: 100px;
+    height: 70px;
+    width: 70px;
     margin: 0 auto;
 }
 
@@ -151,13 +158,13 @@ section img {
 
 main {
     width: 100%;
+    padding-top: 80px;
 }
 
 .portfolio-box {
     width: 1700px;
     overflow: auto;
     margin: 0 auto;
-    margin-top: 80px;
 }
 
 article {
@@ -180,6 +187,10 @@ article {
     font-size: 1.1rem;
 }
 
+.txt-holder p {
+    font-size: .85rem;
+}
+
 main img,
 .portfolio-video {
     width: 100%;
@@ -189,9 +200,8 @@ main img,
 /*=====================FOOTER - CONTACT========================*/
 
 footer {
-    background-color: #EAECEE;
-    font-size: 1.6rem;
-    line-height: 150%;
+    background-color: #FFDD30;
+    font-size: 1.1rem;
 }
 
 .contact-box {
@@ -200,11 +210,9 @@ footer {
     padding: 50px 50px 50px 150px;
     width: 49%;
     margin: 0 auto;
-     font-size: 1.6rem;
  }
 
 .contact-head {
-    font-size: 1rem;
     margin-bottom: 15px;
 }
 
@@ -256,14 +264,17 @@ footer a:hover {
     }
 
     .nav-portfolio {
+        top: 120px;
         left: 28%;
     }
 
     .nav-about {
+        top: 220px;
         left: 2%;
     }
 
     .nav-contact {
+        top: 220px;
         left: 52%;
     }
 
@@ -283,6 +294,18 @@ footer a:hover {
     .txt-holder {
         padding: 10px;
         margin-top: -15px;
+    }
+
+    .phone {
+       left: 50px;
+        top: 500px;
+        -ms-transform: rotate(-0deg);
+        -webkit-transform: rotate(-0deg);
+        transform: rotate(-0deg);
+    }
+
+    section div {
+        padding: 70px 20px 0;
     }
 
 }
