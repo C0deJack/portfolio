@@ -94,9 +94,16 @@ nav {
     transition:  .7s;
 }
 
-h3 {
+h3,
+.phone-atag {
     font-weight: normal;
     margin: 5px 0;
+    text-decoration: none;
+    color: #000000;
+}
+
+.phone-atag:hover {
+    color: #ABB2B9;
 }
 
 .side-tab {
