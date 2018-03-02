@@ -1,0 +1,310 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Futura", Futura, Helvetica, Arial, sans-serif;
+    font-size: 10px;
+}
+
+/*=====================HEADER - NAV========================*/
+
+h1 {
+    position: fixed;
+    font-size: 1.9rem;
+    padding: 10px;
+    margin: 0;
+    left: 10px;
+    top: 10px;
+    z-index: 5;
+}
+
+h1 a {
+    color: #000000;
+    text-decoration: none;
+  }
+
+h1 a:hover {
+    color: #ABB2B9;
+}
+
+header {
+    height: 600px;
+    background-color: #EAECEE;
+}
+
+nav {
+    position: relative;
+    height: 365px;
+}
+
+[class|=nav]  {
+    text-align: center;
+    font-size: 1.3rem;
+    color: #FFDD30;
+    padding-top: 80px;
+    position: absolute;
+    border-radius: 100%;
+    height: 180px;
+    width: 180px;
+    transition: .8s;
+    transition-timing-function: ease-in-out;
+    background-color: #FFDD30;
+}
+
+[class|=nav] a {
+    text-decoration: none;
+    color: #FFDD30;
+}
+
+.nav-portfolio {
+    top: 180px;
+    left: 42%;
+}
+
+.nav-about {
+    top: 280px;
+    left: 11%;
+}
+
+.nav-contact {
+    top: 280px;
+    left: 71%;
+}
+
+[class|=nav]:hover {
+    background-color: #000000;
+    color: #FFDD30;
+    transition:  .1s;
+}
+
+[class|=nav] a:hover {
+    color: #FFDD30;
+}
+
+.phone {
+    position: absolute;
+    right: -70px;
+    top: 125px;
+    font-size: 1.01rem;
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    transition:  .7s;
+}
+
+h3,
+.phone-atag {
+    font-weight: normal;
+    margin: 5px 0;
+    text-decoration: none;
+    color: #000000;
+}
+
+.phone-atag:hover {
+    color: #ABB2B9;
+}
+
+.side-tab {
+    position: fixed;
+    width: 65px;
+    height: 65px;
+    bottom: 30px;
+    border-radius:100%;
+    right: 18px;
+    z-index: 10;
+}
+
+.side-tab img {
+    position: absolute;
+    left: 9px;
+    top: 5px;
+}
+
+.side-tab:hover {
+    background-color: #ABB2B9;
+}
+
+/*=====================SECTION - ABOUT=======================*/
+
+section {
+    background-color: #FFDD30;
+    position: relative;
+}
+
+section div {
+    padding: 70px 70px 0;
+    font-size: 1.2rem;
+    line-height: 150%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 90%;
+}
+
+.icons {
+    margin: 0 auto;
+    width: 80%;
+    padding: 25px;
+}
+
+.icons div {
+    display: inline-block;
+    width: 13%;
+    height: 100%;
+    padding: 0;
+}
+
+section img {
+    height: 70px;
+    width: 70px;
+    margin: 0 auto;
+}
+
+/*=====================MAIN - PORTFOLIO========================*/
+
+main {
+    width: 100%;
+    padding-top: 80px;
+}
+
+.portfolio-box {
+    width: 100%;
+    overflow: auto;
+    margin: 0 auto;
+}
+
+article {
+    height: 400px;
+    width: 33%;
+    float: left;
+    margin-bottom: 65px;
+}
+
+.img-holder {
+    width: 390px;
+    height: 260px;
+    margin: 0 auto;
+}
+
+.txt-holder {
+    width: 390px;
+    height: 150px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+.txt-holder p {
+    font-size: .85rem;
+}
+
+main img,
+.portfolio-video {
+    width: 100%;
+    height: 100%;
+}
+
+/*=====================FOOTER - CONTACT========================*/
+
+footer {
+    background-color: #FFDD30;
+    font-size: 1.1rem;
+}
+
+.contact-box {
+    display: inline-block;
+    vertical-align: top;
+    padding: 50px 50px 50px 150px;
+    width: 49%;
+    margin: 0 auto;
+ }
+
+.contact-head {
+    margin-bottom: 15px;
+}
+
+footer a {
+    color: #000000;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ABB2B9;
+}
+
+/*=====================RESPONSIVE========================*/
+
+@media screen and (max-width: 1400px) {
+
+    article {
+        width: 50%;
+    }
+
+}
+
+@media screen and (max-width: 900px){
+
+    article {
+        width: 100%;
+    }
+
+    .icons div {
+        width: 18%;
+    }
+
+    section img {
+        height: 75px;
+        width: 75px;
+    }
+
+}
+
+@media screen and (max-width: 730px){
+
+    .contact-box {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .nav-portfolio {
+        top: 120px;
+        left: 28%;
+    }
+
+    .nav-about {
+        top: 220px;
+        left: 2%;
+    }
+
+    .nav-contact {
+        top: 220px;
+        left: 52%;
+    }
+
+    .portfolio-box {
+        width: 400px;
+    }
+
+    section img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .txt-holder {
+        padding: 10px;
+        margin-top: -15px;
+    }
+
+    .phone {
+       left: 50px;
+        top: 500px;
+        -ms-transform: rotate(-0deg);
+        -webkit-transform: rotate(-0deg);
+        transform: rotate(-0deg);
+    }
+
+    section div {
+        padding: 70px 20px 0;
+    }
+
+}
