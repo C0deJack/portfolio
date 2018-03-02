@@ -21,8 +21,8 @@ h1 {
 }
 
 h1 a {
-      color: #000000;
-      text-decoration: none;
+    color: #000000;
+    text-decoration: none;
   }
 
 h1 a:hover {
@@ -94,9 +94,16 @@ nav {
     transition:  .7s;
 }
 
-h3 {
+h3,
+.phone-atag {
     font-weight: normal;
     margin: 5px 0;
+    text-decoration: none;
+    color: #000000;
+}
+
+.phone-atag:hover {
+    color: #ABB2B9;
 }
 
 .side-tab {
@@ -162,7 +169,7 @@ main {
 }
 
 .portfolio-box {
-    width: 1700px;
+    width: 100%;
     overflow: auto;
     margin: 0 auto;
 }
@@ -227,12 +234,8 @@ footer a:hover {
 
 /*=====================RESPONSIVE========================*/
 
-@media screen and (max-width: 1400px){
+@media screen and (max-width: 1400px) {
 
-    .portfolio-box {
-        width: 950px;
-
-    }
     article {
         width: 50%;
     }
@@ -241,8 +244,8 @@ footer a:hover {
 
 @media screen and (max-width: 900px){
 
-    .portfolio-box {
-        width: 850px;
+    article {
+        width: 100%;
     }
 
     .icons div {
@@ -280,10 +283,6 @@ footer a:hover {
 
     .portfolio-box {
         width: 400px;
-    }
-
-    article {
-        width: 100%;
     }
 
     section img {
