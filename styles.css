@@ -169,7 +169,7 @@ main {
 }
 
 .portfolio-box {
-    width: 1700px;
+    width: 100%;
     overflow: auto;
     margin: 0 auto;
 }
@@ -234,12 +234,8 @@ footer a:hover {
 
 /*=====================RESPONSIVE========================*/
 
-@media screen and (max-width: 1400px){
+@media screen and (max-width: 1400px) {
 
-    .portfolio-box {
-        width: 950px;
-
-    }
     article {
         width: 50%;
     }
@@ -248,8 +244,8 @@ footer a:hover {
 
 @media screen and (max-width: 900px){
 
-    .portfolio-box {
-        width: 850px;
+    article {
+        width: 100%;
     }
 
     .icons div {
@@ -287,10 +283,6 @@ footer a:hover {
 
     .portfolio-box {
         width: 400px;
-    }
-
-    article {
-        width: 100%;
     }
 
     section img {
