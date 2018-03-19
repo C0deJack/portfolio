@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.6.39)
 # Database: jackdb
-# Generation Time: 2018-03-19 2:03:08 pm +0000
+# Generation Time: 2018-03-19 2:15:09 pm +0000
 # ************************************************************
 
 
@@ -27,9 +27,8 @@ DROP TABLE IF EXISTS `cms`;
 
 CREATE TABLE `cms` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `phone` varchar(100) NOT NULL,
-  `email` varchar(150) NOT NULL DEFAULT '',
-  `about` text,
+  `field` varchar(150) NOT NULL DEFAULT '',
+  `value` varchar(2000) NOT NULL,
   `deleted` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
