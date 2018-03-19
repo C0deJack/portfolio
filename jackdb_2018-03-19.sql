@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.6.39)
 # Database: jackdb
-# Generation Time: 2018-03-19 1:21:22 pm +0000
+# Generation Time: 2018-03-19 2:03:08 pm +0000
 # ************************************************************
 
 
@@ -20,33 +20,34 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
-# Dump of table eva_cms
+# Dump of table cms
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `eva_cms`;
+DROP TABLE IF EXISTS `cms`;
 
-CREATE TABLE `eva_cms` (
+CREATE TABLE `cms` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `page_id` int(11) NOT NULL,
-  `field` int(11) unsigned NOT NULL,
-  `value` longblob NOT NULL,
+  `phone` varchar(100) NOT NULL,
+  `email` varchar(150) NOT NULL DEFAULT '',
+  `about` text,
   `deleted` tinyint(1) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `field-link` (`field`),
-  CONSTRAINT `field-link` FOREIGN KEY (`field`) REFERENCES `field_cms` (`id`) ON DELETE NO ACTION
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
 
-# Dump of table field_cms
+# Dump of table projects
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `field_cms`;
+DROP TABLE IF EXISTS `projects`;
 
-CREATE TABLE `field_cms` (
+CREATE TABLE `projects` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `field` varchar(70) NOT NULL DEFAULT '',
-  `deleted` tinyint(1) NOT NULL DEFAULT '0',
+  `project_img` varchar(200) DEFAULT NULL,
+  `project_title` varchar(100) DEFAULT NULL,
+  `project_text` varchar(2000) DEFAULT NULL,
+  `project_link` varchar(200) DEFAULT NULL,
+  `project_delete` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
