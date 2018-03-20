@@ -22,6 +22,26 @@ $phone = $result [0]['phone'];
 $about = $result [0]['about'];
 $del = $result [0]['deleted'];
 
+function createProjectForm($result1)
+{
+    $result_output = "";
+    foreach ($result1 as $list) {
+        $result_output .=  "<form method='post' action='cms.php'>
+    <option value='" . $list['project_id'] . "'>" . $list['project_id'] . "</option>
+    <input type='text' class='project_form' size='35' value='" . $list ['project_img'] . "
+    ' name='project-img'>Image file name
+    <input type='text' class='project_form' size='35' value='" . $list ['project_title'] . "
+    ' name='project-title'>Project Title (max 100 characters)
+    <input type='text' class='project_form' size='35' value='" . $list ['project_text'] . "
+    ' name='project-text'>Project Description (max 2000 characters)
+    <input type='text' class='project_form' size='35' value='" . $list ['project_link'] . "
+    ' name='project-link'>Project link URL
+    <input type='submit' value='update'>
+    </form>";
+    }
+    return $result_output;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,39 +50,29 @@ $del = $result [0]['deleted'];
     <link rel="stylesheet" type="text/css" href="cms.css">
     <title>Portfolio Input Page</title>
 </head>
-<h3>Welcome to the Portfolio Input Page</h3>
+<body>
+    <h3>Welcome to the Portfolio Input Page</h3>
 
-<form method="post" action="cms.php">
-    <input type="text" value="<?php echo $email; ?>" name="email">email
-    <input type="submit" value="update">
-</form><br>
-<form method="post" action="cms.php">
-    <input type="tel" value="<?php echo $phone; ?>" name="tel">Telephone Number
-    <input type="submit" value="update">
-</form><br>
-<form method="post" action="cms.php">
-    <textarea rows="8" cols="150"  name="about" form="about">
-        <?php echo $about; ?></textarea>
-    <input type="submit" value="update">
-</form><br>
-
+    <form method="post" action="cms.php">
+        <input type="text" value="<?php echo $email; ?>" name="email">email
+        <input type="submit" value="update">
+    </form><br>
+    <form method="post" action="cms.php">
+        <input type="tel" value="<?php echo $phone; ?>" name="tel">Telephone Number
+        <input type="submit" value="update">
+    </form><br>
+    <form method="post" action="cms.php">
+        <textarea rows="8" cols="150"  name="about" form="about">
+            <?php echo $about; ?>
+        </textarea>
+        <input type="submit" value="update">
+    </form><br>
+</body>
     <h4>Project holder</h4>
+
 <?php
 
-foreach ($result1 as $list) {
-    echo "<form method='post' action='cms.php'>";
-    echo "<option value='" . $list['project_id'] . "'>" . $list['project_id'] . "</option>";
-    echo "<input type='text' class='project_form' size='35' value='".$list ['project_img']."
-    ' name='project-img'>Image file name";
-    echo "<input type='text' class='project_form' size='35' value='".$list ['project_title']."
-    ' name='project-title'>Project Title (max 100 characters)";
-    echo "<input type='text' class='project_form' size='35' value='".$list ['project_text']."
-    ' name='project-text'>Project Description (max 2000 characters)";
-    echo "<input type='text' class='project_form' size='35' value='".$list ['project_link']."
-    ' name='project-link'>Project link URL";
-    echo "<input type='submit' value='update'>";
-    echo "</form>";
-}
+echo createProjectForm($result1);
 
 ?>
 
