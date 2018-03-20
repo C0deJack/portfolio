@@ -4,23 +4,45 @@ $db = new PDO('mysql:host=127.0.0.1; dbname=jackdb', 'root');
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,
     PDO::FETCH_ASSOC);
 
-$query= $db->prepare("SELECT `email`, `phone`, `about`,`deleted`
+$query= $db->prepare("SELECT `email`, `phone`, `about`
 FROM `cms` WHERE `deleted` = 0 ORDER BY `id` DESC LIMIT 1;");
 
 $query1= $db->prepare("SELECT `project_id`, `project_img`, 
 `project_title`,`project_text`, `project_link` FROM `projects` WHERE 
 `project_delete` = 0 ORDER BY `project_id` ASC;");
 
-$query->execute();
+$query2= $db->prepare("UPDATE `cms` SET `deleted`= 1;");
+
+$query3= $db->prepare("INSERT INTO `cms` (`email`, `phone`, `about`)
+VALUES (:email_out, :phone_out, :about_out);");
+
+
 $query1->execute();
 
-$result = $query->fetchAll();
+
+if (!empty($_POST)) {
+    $query2->execute();
+}
+
+$email_out = $_POST ['email_out'];
+$phone_out = $_POST ['phone_out'];
+$about_out = $_POST ['about_out'];
+
+$query3->bindParam(':email_out', $email_out);
+$query3->bindParam(':phone_out', $phone_out);
+$query3->bindParam(':about_out', $about_out);
+
+$query3->execute();
+
+$query->execute();
+
+$result = $query->fetch();
 $result1 = $query1->fetchAll();
 
-$email = $result [0]['email'];
-$phone = $result [0]['phone'];
-$about = $result [0]['about'];
-$del = $result [0]['deleted'];
+$email = $result ['email'];
+$phone = $result ['phone'];
+$about = $result ['about'];
+
 
 function createProjectForm($result1)
 {
@@ -54,17 +76,9 @@ function createProjectForm($result1)
     <h3>Welcome to the Portfolio Input Page</h3>
 
     <form method="post" action="cms.php">
-        <input type="text" value="<?php echo $email; ?>" name="email">email
-        <input type="submit" value="update">
-    </form><br>
-    <form method="post" action="cms.php">
-        <input type="tel" value="<?php echo $phone; ?>" name="tel">Telephone Number
-        <input type="submit" value="update">
-    </form><br>
-    <form method="post" action="cms.php">
-        <textarea rows="8" cols="150"  name="about" form="about">
-            <?php echo $about; ?>
-        </textarea>
+        <input type="text" value="<?php echo $email; ?>" name="email_out">email
+        <input type="tel" value="<?php echo $phone; ?>" name="phone_out">Telephone Number
+        <textarea rows="8" cols="150"  name="about_out"><?php echo $about; ?></textarea>
         <input type="submit" value="update">
     </form><br>
 </body>
