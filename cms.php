@@ -7,13 +7,25 @@ $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,
 $query= $db->prepare("SELECT `email`, `phone`, `about`,`deleted`
 FROM `cms` WHERE `deleted` = 0 ORDER BY `id` DESC LIMIT 1;");
 
+$query2= $db->prepare("SELECT `project_img`, `project_title`, 
+`project_text`, `project_link`,`project_delete` FROM `projects` WHERE 
+`project_delete` = 0 ORDER BY `id` DESC LIMIT 1;");
+
 $query->execute();
+$query2->execute();
 $result = $query->fetchAll();
+$result2 = $query2->fetchAll();
 
 $email = $result [0]['email'];
 $phone = $result [0]['phone'];
 $about = $result [0]['about'];
 $del= $result [0]['deleted'];
+
+$project_img = $result2 [0]['project_img'];
+$project_title = $result2 [0]['project_title'];
+$project_text = $result2 [0]['project_text'];
+$project_link = $result2 [0]['project_link'];
+$project_delete= $result2 [0]['project_delete'];
 
 ?>
 
@@ -34,10 +46,10 @@ $del= $result [0]['deleted'];
 
 <form method="post" action="cms.php">
     <h4>Project holder 1</h4><br>
-    <input type="text" name="project-img">Image file name<br>
-    <input type="text" name="project-title">Project Title (max 100 characters)<br>
-    <input type="text" name="project-text">Project Description (max 2000 characters)<br>
-    <input type="text" name="project-link">Project link URL<br>
+    <input type="text" size="35" value="<?php echo $project_img; ?>" name="project-img">Image file name<br>
+    <input type="text" size="35" value="<?php echo $project_title; ?>" name="project-title">Project Title (max 100 characters)<br>
+    <input type="text" size="35" value="<?php echo $project_text; ?>" name="project-text">Project Description (max 2000 characters)<br>
+    <input type="text" size="35" value="<?php echo $project_link; ?>" name="project-link">Project link URL<br>
     <input type="submit" value="update">
 </form>
 
