@@ -7,3 +7,8 @@ body {
     font-family: "Futura", Futura, Helvetica, Arial, sans-serif;
     font-size: 10px;
 }
+
+.project_form {
+    display: block;
+    background-color: lightgrey;
+}

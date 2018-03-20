@@ -23,7 +23,13 @@ $about = $result [0]['about'];
 $del = $result [0]['deleted'];
 
 ?>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="normalize.css" type="text/css" media="screen">
+    <link rel="stylesheet" type="text/css" href="cms.css">
+    <title>Portfolio Input Page</title>
+</head>
 <h3>Welcome to the Portfolio Input Page</h3>
 
 <form method="post" action="cms.php">
@@ -44,15 +50,15 @@ $del = $result [0]['deleted'];
 <?php
 
 foreach ($result1 as $list) {
-    echo "<form method='post' action='cms.php' id='project'>";
+    echo "<form method='post' action='cms.php'>";
     echo "<option value='" . $list['project_id'] . "'>" . $list['project_id'] . "</option>";
-    echo "<input type='text' size='35' value='".$list ['project_img']."
+    echo "<input type='text' class='project_form' size='35' value='".$list ['project_img']."
     ' name='project-img'>Image file name";
-    echo "<input type='text' size='35' value='".$list ['project_title']."
+    echo "<input type='text' class='project_form' size='35' value='".$list ['project_title']."
     ' name='project-title'>Project Title (max 100 characters)";
-    echo "<input type='text' size='35' value='".$list ['project_text']."
+    echo "<input type='text' class='project_form' size='35' value='".$list ['project_text']."
     ' name='project-text'>Project Description (max 2000 characters)";
-    echo "<input type='text' size='35' value='".$list ['project_link']."
+    echo "<input type='text' class='project_form' size='35' value='".$list ['project_link']."
     ' name='project-link'>Project link URL";
     echo "<input type='submit' value='update'>";
     echo "</form>";
