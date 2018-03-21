@@ -28,6 +28,10 @@ $email_out = $_POST ['email_out'];
 $phone_out = $_POST ['phone_out'];
 $about_out = $_POST ['about_out'];
 
+$project_title = $_POST ['project_title'];
+$project_id= $_POST ['project_id'];
+
+
 $query3->bindParam(':email_out', $email_out);
 $query3->bindParam(':phone_out', $phone_out);
 $query3->bindParam(':about_out', $about_out);
@@ -49,13 +53,13 @@ function createProjectForm($result1)
     $result_output = "";
     foreach ($result1 as $list) {
         $result_output .=  "<form method='post' action='cms.php'>
-    <option value='" . $list['project_id'] . "'>" . $list['project_id'] . "</option>
-    <input type='text' class='project_form' size='35' value='" . $list ['project_img'] . "
-    ' name='project-img'>Image file name
+    <input type='hidden' value='" . $list['project_id'] . "'>" . $list['project_id'] . "
     <input type='text' class='project_form' size='35' value='" . $list ['project_title'] . "
     ' name='project-title'>Project Title (max 100 characters)
-    <input type='text' class='project_form' size='35' value='" . $list ['project_text'] . "
-    ' name='project-text'>Project Description (max 2000 characters)
+    <textarea rows='6' cols='80' class='project_form' size='35' value='" . $list ['project_text'] . "
+    ' name='project-text'></textarea>Project Description (max 2000 characters)
+    <input type='text' class='project_form' size='35' value='" . $list ['project_img'] . "
+    ' name='project-img'>Image file name
     <input type='text' class='project_form' size='35' value='" . $list ['project_link'] . "
     ' name='project-link'>Project link URL
     <input type='submit' value='update'>
@@ -77,8 +81,8 @@ function createProjectForm($result1)
 
     <form method="post" action="cms.php">
         <input type="text" value="<?php echo $email; ?>" name="email_out">email
-        <input type="tel" value="<?php echo $phone; ?>" name="phone_out">Telephone Number
-        <textarea rows="8" cols="150"  name="about_out"><?php echo $about; ?></textarea>
+        <input type="tel" value="<?php echo $phone; ?>" name="phone_out">Telephone Number<br><br>
+        <textarea rows="12" cols="120"  name="about_out"><?php echo $about; ?></textarea>
         <input type="submit" value="update">
     </form><br>
 </body>
@@ -87,7 +91,7 @@ function createProjectForm($result1)
 <?php
 
 echo createProjectForm($result1);
-
+var_dump($project_id, $project_title);
 ?>
 
 
