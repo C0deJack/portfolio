@@ -20,6 +20,18 @@ $query1= $db->prepare("SELECT `id`, `project_img`,
 $query1->execute();
 $result1= $query1->fetchAll();
 
+var_dump($result1);
+
+function projectInputVariables ($result1) {
+    $i = 0;
+    foreach ($result1 as $key => $val ){
+        $var =
+
+            $i++;
+    }
+
+}
+
 $project_img1 = $result1 [0]['project_img'];
 $project_title1 = $result1 [0]['project_title'];
 $project_text1 = $result1 [0]['project_text'];
