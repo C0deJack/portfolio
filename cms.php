@@ -16,13 +16,9 @@ if (!empty($_POST)) {
     $query2->execute();
 }
 
-$email_out = $_POST ['email_out'];
-$phone_out = $_POST ['phone_out'];
-$about_out = $_POST ['about_out'];
-
-$query3->bindParam(':email_out', $email_out);
-$query3->bindParam(':phone_out', $phone_out);
-$query3->bindParam(':about_out', $about_out);
+$query3->bindParam(':email_out', $_POST ['email_out']);
+$query3->bindParam(':phone_out', $_POST ['phone_out']);
+$query3->bindParam(':about_out', $_POST ['about_out']);
 
 $query3->execute();
 $query->execute();
