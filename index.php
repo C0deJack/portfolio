@@ -1,8 +1,22 @@
+<?php
+$db = new PDO('mysql:host=127.0.0.1; dbname=jackdb', 'root');
+
+$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,
+PDO::FETCH_ASSOC);
+
+$query= $db->prepare("SELECT `id`, `project_img`, `project_title`, `project_text`, `project_link` FROM `projects`; ");
+
+$query->execute();
+$result = $query->fetchAll();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="stylesheet" href="normalize.css" type="text/css" media="screen">
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Jack Wood-Pearce</title>
 </head>
 <body>
