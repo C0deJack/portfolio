@@ -7,18 +7,10 @@ $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,
 $query= $db->prepare("SELECT `email`, `phone`, `about`
 FROM `cms` WHERE `deleted` = 0 ORDER BY `id` DESC LIMIT 1;");
 
-$query1= $db->prepare("SELECT `project_id`, `project_img`, 
-`project_title`,`project_text`, `project_link` FROM `projects` WHERE 
-`project_delete` = 0 ORDER BY `project_id` ASC;");
-
 $query2= $db->prepare("UPDATE `cms` SET `deleted`= 1;");
 
 $query3= $db->prepare("INSERT INTO `cms` (`email`, `phone`, `about`)
 VALUES (:email_out, :phone_out, :about_out);");
-
-
-$query1->execute();
-
 
 if (!empty($_POST)) {
     $query2->execute();
@@ -28,45 +20,18 @@ $email_out = $_POST ['email_out'];
 $phone_out = $_POST ['phone_out'];
 $about_out = $_POST ['about_out'];
 
-$project_title = $_POST ['project_title'];
-$project_id= $_POST ['project_id'];
-
-
 $query3->bindParam(':email_out', $email_out);
 $query3->bindParam(':phone_out', $phone_out);
 $query3->bindParam(':about_out', $about_out);
 
 $query3->execute();
-
 $query->execute();
 
 $result = $query->fetch();
-$result1 = $query1->fetchAll();
 
 $email = $result ['email'];
 $phone = $result ['phone'];
 $about = $result ['about'];
-
-
-function createProjectForm($result1)
-{
-    $result_output = "";
-    foreach ($result1 as $list) {
-        $result_output .=  "<form method='post' action='cms.php'>
-    <input type='hidden' value='" . $list['project_id'] . "'>" . $list['project_id'] . "
-    <input type='text' class='project_form' size='35' value='" . $list ['project_title'] . "
-    ' name='project-title'>Project Title (max 100 characters)
-    <textarea rows='6' cols='80' class='project_form' size='35' value='" . $list ['project_text'] . "
-    ' name='project-text'></textarea>Project Description (max 2000 characters)
-    <input type='text' class='project_form' size='35' value='" . $list ['project_img'] . "
-    ' name='project-img'>Image file name
-    <input type='text' class='project_form' size='35' value='" . $list ['project_link'] . "
-    ' name='project-link'>Project link URL
-    <input type='submit' value='update'>
-    </form>";
-    }
-    return $result_output;
-}
 
 ?>
 <!DOCTYPE html>
@@ -80,8 +45,7 @@ function createProjectForm($result1)
     <h3>Welcome to the About Me Input Page</h3>
 
     <nav>
-        <a href="projects.php">Link to Projects Input Page</a>
-        <a href="cms.php">Link to About Me Input Page</a>
+        <a href="projects.php">Link to Projects Input Page</a><br><br>
     </nav>
 
     <form method="post" action="cms.php">
@@ -91,12 +55,8 @@ function createProjectForm($result1)
         <input type="submit" value="update">
     </form><br>
 </body>
-    <h4>Project holder</h4>
+</html>
 
-<?php
 
-echo createProjectForm($result1);
-var_dump($project_id, $project_title);
-?>
 
 
