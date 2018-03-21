@@ -13,8 +13,6 @@ $result= $query->fetchAll();
 $email = $result [0]['email'];
 $phone = $result [0]['phone'];
 $about = $result [0]['about'];
-//var_dump($result);
-//var_dump($result [0]['phone']);
 
 $query1= $db->prepare("SELECT `id`, `project_img`, 
 `project_title`, `project_text`, `project_link` FROM `projects`; ");
@@ -22,7 +20,35 @@ $query1= $db->prepare("SELECT `id`, `project_img`,
 $query1->execute();
 $result1= $query1->fetchAll();
 
-//var_dump($result1);
+$project_img1 = $result1 [0]['project_img'];
+$project_title1 = $result1 [0]['project_title'];
+$project_text1 = $result1 [0]['project_text'];
+$project_link1 = $result1 [0]['project_link'];
+
+$project_img2 = $result1 [1]['project_img'];
+$project_title2 = $result1 [1]['project_title'];
+$project_text2 = $result1 [1]['project_text'];
+$project_link2 = $result1 [1]['project_link'];
+
+$project_img3 = $result1 [2]['project_img'];
+$project_title3 = $result1 [2]['project_title'];
+$project_text3 = $result1 [2]['project_text'];
+$project_link3 = $result1 [2]['project_link'];
+
+$project_img4 = $result1 [3]['project_img'];
+$project_title4 = $result1 [3]['project_title'];
+$project_text4 = $result1 [3]['project_text'];
+$project_link4 = $result1 [3]['project_link'];
+
+$project_img5 = $result1 [4]['project_img'];
+$project_title5 = $result1 [4]['project_title'];
+$project_text5 = $result1 [4]['project_text'];
+$project_link5 = $result1 [4]['project_link'];
+
+$project_img6 = $result1 [5]['project_img'];
+$project_title6 = $result1 [5]['project_title'];
+$project_text6 = $result1 [5]['project_text'];
+$project_link6 = $result1 [5]['project_link'];
 
 ?>
 
@@ -67,15 +93,15 @@ $result1= $query1->fetchAll();
         <article>
             <div class="img-holder"><img src="assets/pilot-shop.png" alt="pilot shop screen shot"></div>
             <div class="txt-holder">
-                <h3>The Pilot Shop</h3>
-                <p>This was a two day build of a shop home page to enhance our skill to produce a responsive website.</p>
+                <h3><?php echo $project_title1; ?></h3>
+                <p><?php echo $project_text1; ?></p>
             </div>
         </article>
         <article>
             <div class="img-holder"><img src="assets/mayden-logo.jpg" alt="mayden academy logo"></div>
             <div class="txt-holder">
-                <h3>Mayden Logo HTML &amp; CSS Only</h3>
-                <p>Lorem ipsum dolor sit amet, at eum falli probatus phaedrum, ex falli choro qui. Has fuisset dignissim ne, ne qui novum denique iudicabit. No duo dicit nusquam.</p>
+                <h3><?php echo $project_title2; ?></h3>
+                <p><?php echo $project_text2; ?></p>
             </div>
         </article>
         <article>
@@ -83,30 +109,30 @@ $result1= $query1->fetchAll();
                 <input type="button" value="Play" onclick="assets/roller-coaster.mp4.play()">
                 <source src="assets/roller-coaster.mp4" type="video/mp4"></div>
             <div class="txt-holder">
-                <h3>Example Project</h3>
-                <p>Lorem ipsum dolor sit amet, at eum falli probatus phaedrum, ex falli choro qui. Has fuisset dignissim ne, ne qui novum denique iudicabit. No duo dicit nusquam.</p>
+                <h3><?php echo $project_title3; ?></h3>
+                <p><?php echo $project_text3; ?></p>
             </div>
         </article>
         <article>
             <div class="img-holder"><img src="assets/place-holder.jpg" alt="computer screen showing code"></div>
             <div class="txt-holder">
-                <h3>Example Project</h3>
-                <p>Lorem ipsum dolor sit amet, at eum falli probatus phaedrum, ex falli choro qui. Has fuisset dignissim ne, ne qui novum denique iudicabit. No duo dicit nusquam.</p>
+                <h3><?php echo $project_title4; ?></h3>
+                <p><?php echo $project_text4; ?></p>
             </div>
         </article>
         <article>
             <div class="img-holder"><video autoplay muted loop playsinline poster="assets/typing.gif" class="portfolio-video">
                 <source src="assets/typing.mp4" type="video/mp4"></div>
             <div class="txt-holder">
-                <h3>Example Project</h3>
-                <p>Lorem ipsum dolor sit amet, at eum falli probatus phaedrum, ex falli choro qui. Has fuisset dignissim ne, ne qui novum denique iudicabit. No duo dicit nusquam.</p>
+                <h3><?php echo $project_title5; ?></h3>
+                <p><?php echo $project_text5; ?></p>
             </div>
         </article>
         <article>
             <div class="img-holder"><img src="assets/ipad.jpg" alt="woman holding an ipad"></div>
             <div class="txt-holder">
-                <h3>Example Project</h3>
-                <p>Lorem ipsum dolor sit amet, at eum falli probatus phaedrum, ex falli choro qui. Has fuisset dignissim ne, ne qui novum denique iudicabit. No duo dicit nusquam.</p>
+                <h3><?php echo $project_title6; ?></h3>
+                <p><?php echo $project_text6; ?></p>
             </div>
     </div>
 </main>
