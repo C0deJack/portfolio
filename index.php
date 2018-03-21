@@ -4,10 +4,25 @@ $db = new PDO('mysql:host=127.0.0.1; dbname=jackdb', 'root');
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,
 PDO::FETCH_ASSOC);
 
-$query= $db->prepare("SELECT `id`, `project_img`, `project_title`, `project_text`, `project_link` FROM `projects`; ");
+$query= $db->prepare("SELECT `email`, `phone`, 
+`about` FROM `cms` WHERE `deleted`= '0';");
 
 $query->execute();
-$result = $query->fetchAll();
+$result= $query->fetchAll();
+
+$email = $result [0]['email'];
+$phone = $result [0]['phone'];
+$about = $result [0]['about'];
+//var_dump($result);
+//var_dump($result [0]['phone']);
+
+$query1= $db->prepare("SELECT `id`, `project_img`, 
+`project_title`, `project_text`, `project_link` FROM `projects`; ");
+
+$query1->execute();
+$result1= $query1->fetchAll();
+
+//var_dump($result1);
 
 ?>
 
@@ -28,14 +43,14 @@ $result = $query->fetchAll();
         <a href="#contact"><div class="nav-contact">CONTACT</div></a>
     </nav>
     <div class="phone">
-        <h3>+44 7746 223593</h3>
-        <h3>jackwoodpearce@gmail.com</h3>
+        <h3><?php echo $phone; ?></h3>
+        <h3><?php echo $email; ?></h3>
     </div>
     <a href="#home" class="side-tab"><img src="assets/up-arrow.png" alt="up arrow"></a>
 </header>
 <section>
     <div id="about">
-        Jack's designs bring customised and considered innovation to websites and software systems to enhance your business and everyday life. With over three weeks of experience he can draw upon knowledge of front end systems such as HTML, CSS, Git, Git Hub, Php Storm. With the great work of Mayden Academy, he is studying hard to become a well-rounded full stack developer and is already a certified Scrum Master. His next set of challenges over the coming months are Databases, SQL, RWD, CSS frameworks, PWA's, Object Orientated Programming, MVC & PHP Frameworks, JavaScript Frameworks & Node.js and PHP ZCE. Please get in contact to discuss your next project.
+        <?php echo $about; ?>
     </div>
     <div class="icons">
         <div><img src="assets/icons8-html.png" alt="html icon"></div>
@@ -98,8 +113,8 @@ $result = $query->fetchAll();
 <footer id="contact">
         <div class="contact-box">
             <div class="contact-head">Contact me:</div>
-            <div>+44 7746 223593</div>
-            <div>jackwoodpearce@gmail.com</div>
+            <div><?php echo $phone; ?></div>
+            <div><?php echo $email; ?></div>
         </div >
         <div class="contact-box">
             <div class="contact-head">Follow me:</div>
