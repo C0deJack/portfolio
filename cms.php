@@ -77,7 +77,12 @@ function createProjectForm($result1)
     <title>Portfolio Input Page</title>
 </head>
 <body>
-    <h3>Welcome to the Portfolio Input Page</h3>
+    <h3>Welcome to the About Me Input Page</h3>
+
+    <nav>
+        <a href="projects.php">Link to Projects Input Page</a>
+        <a href="cms.php">Link to About Me Input Page</a>
+    </nav>
 
     <form method="post" action="cms.php">
         <input type="text" value="<?php echo $email; ?>" name="email_out">email
