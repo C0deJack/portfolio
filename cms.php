@@ -14,10 +14,10 @@ if (!empty($_POST ['user-name'] && $_POST ['password'])) {
     $query->bindParam(':user', $_POST ['user-name']);
 
     $query->execute();
-    $out = $query->fetchAll();
+    $out = $query->fetch();
 
-    $passwordOut= $out[0]['password'];
-    $userOut= $out[0]['user'];
+    $passwordOut= $out['password'];
+    $userOut= $out['user'];
 
     if (password_verify($_POST ['password'], $passwordOut)) {
         $_SESSION ['logged-in'] = 1;
