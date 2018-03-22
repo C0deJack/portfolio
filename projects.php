@@ -29,7 +29,7 @@ $query2->execute();
  * @param $result1 - Array from jackdb database
  * @return string - html code output
  */
-function createProjectForm($result1)
+function createProjectForm(array $result1)
 {
     $result_output = "";
     foreach ($result1 as $list) {

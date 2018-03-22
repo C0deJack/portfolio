@@ -25,7 +25,7 @@ $result1= $query1->fetchAll();
  * @param $result1 - Array from jackdb database
  * @return string - html code output
  */
-function createProjectArticle($result1)
+function createProjectArticle(array $result1)
 {
 $result_output = "";
 foreach ($result1 as $list) {
