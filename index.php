@@ -26,8 +26,8 @@ $result_output = "";
 foreach ($result1 as $list) {
     $result_output .=
         "<article>
-            <div class='img-holder'><img src=' " . $list['project_img'] . " 
-            ' alt='pilot shop screen shot'></div>
+            <div class='img-holder'> " . $list['project_img'] . " 
+            </div>
             <div class='txt-holder'>
             <h3>" . $list['project_title'] . "</h3>
             <p>" . $list['project_text'] . "</p>
