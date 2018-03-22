@@ -1,4 +1,41 @@
 <?php
+session_start ();
+
+if (!empty($_POST)) {
+
+    $db = new PDO('mysql:host=127.0.0.1; dbname=jackdb', 'root');
+    $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,
+        PDO::FETCH_ASSOC);
+    $query = $db->prepare("SELECT `password` , `user` 
+    FROM `users` WHERE `user` LIKE CONCAT('%', :user, '%');");
+
+    $query->bindParam(':user', $_POST ['user-name']);
+
+    $query->execute();
+    $out = $query->fetchAll();
+
+    $passwordOut= $out[0]['password'];
+    $userOut= $out[0]['user'];
+
+    if (password_verify($_POST ['password'], $passwordOut)) {
+        $_SESSION ['logged-in'] = 1;
+        echo "Welcome $userOut !        How are you today?";
+    } else {
+        $_SESSION ['logged-in'] = 2;
+        header("Location: login.php");
+    }
+}  elseif ($_SESSION ['logged-in'] !==1) {
+    header("Location: login.php");
+}
+?>
+<h4>Logout</h4>
+<form method="post" action="logout.php">
+    <input type="hidden" name="logout">
+    <input type="submit" value="logout">
+</form>
+
+<?php
+
 $db = new PDO('mysql:host=127.0.0.1; dbname=jackdb', 'root');
 
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,
