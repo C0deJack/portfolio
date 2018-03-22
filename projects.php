@@ -24,7 +24,12 @@ $query2->bindParam(':id', $_POST ['id']);
 
 $query2->execute();
 
-function createProjectForm($result1)
+/**
+ * Function dynamically creates the project input forms with the given database
+ * @param $result1 - Array from jackdb database
+ * @return string - html code output
+ */
+function createProjectForm(array $result1)
 {
     $result_output = "";
     foreach ($result1 as $list) {
@@ -59,15 +64,16 @@ $result1 = $query1->fetchAll();
 </head>
 <body>
 <h3>Welcome to the Projects Input Page</h3>
-
 <nav>
     <a href="cms.php">Link to About Me Input Page</a><br><br>
 </nav>
 </body>
 </html>
 
-<?php
+<?php echo createProjectForm($result1); ?>
 
-echo createProjectForm($result1);
-
-?>
+<h4>Logout</h4>
+<form method="post" action="logout.php">
+    <input type="hidden" name="logout">
+    <input type="submit" value="logout">
+</form>
