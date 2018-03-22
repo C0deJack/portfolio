@@ -4,8 +4,10 @@ session_start ();
 if (!empty($_POST)) {
 
     $db = new PDO('mysql:host=127.0.0.1; dbname=jackdb', 'root');
+
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,
         PDO::FETCH_ASSOC);
+
     $query = $db->prepare("SELECT `password` , `user` 
     FROM `users` WHERE `user` LIKE CONCAT('%', :user, '%');");
 

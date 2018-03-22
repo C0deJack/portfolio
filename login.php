@@ -13,8 +13,8 @@ if ($session === 1) {
 
 <h3>LOGIN PAGE</h3>
 
-<form method="post" action="cms.php">
-    <input type="text" name="user-name">
-    <input type="text" name="password">
+<form  method="post" action="cms.php">
+    <input  type="text" name="user-name">
+    <input  type="password" name="password">
     <input type="submit">
 </form>
