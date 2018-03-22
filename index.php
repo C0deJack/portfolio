@@ -20,6 +20,11 @@ $query1= $db->prepare("SELECT `id`, `project_img`,
 $query1->execute();
 $result1= $query1->fetchAll();
 
+/**
+ * Function dynamically creates the project articles with the given database
+ * @param $result1 - Array from jackdb database
+ * @return string - html code output
+ */
 function createProjectArticle($result1)
 {
 $result_output = "";
