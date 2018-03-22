@@ -1,7 +1,7 @@
 <?php
 session_start ();
 
-if (!empty($_POST)) {
+if (!empty($_POST ['user-name'] && $_POST ['password'])) {
 
     $db = new PDO('mysql:host=127.0.0.1; dbname=jackdb', 'root');
 
@@ -76,7 +76,7 @@ $about = $result ['about'];
     </nav>
 
     <form method="post" action="cms.php">
-        <input type="text" name="email_out" value="<?php echo $email; ?>">
+        <input type="text" name="email_out" size="35" value="<?php echo $email; ?>">
         email
         <input type="tel" name="phone_out" value="<?php echo $phone; ?>">
         Telephone Number<br><br>
