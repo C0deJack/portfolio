@@ -43,7 +43,7 @@ $query2= $db->prepare("UPDATE `cms` SET `deleted`= 1;");
 $query3= $db->prepare("INSERT INTO `cms` (`email`, `phone`, `about`)
 VALUES (:email_out, :phone_out, :about_out);");
 
-if (!empty($_POST)) {
+if (!empty($_POST ['email_out'] && $_POST ['email_out'] && $_POST ['email_out'])) {
     $query2->execute();
 }
 
