@@ -27,14 +27,6 @@ if (!empty($_POST)) {
 }  elseif ($_SESSION ['logged-in'] !==1) {
     header("Location: login.php");
 }
-?>
-<h4>Logout</h4>
-<form method="post" action="logout.php">
-    <input type="hidden" name="logout">
-    <input type="submit" value="logout">
-</form>
-
-<?php
 
 $db = new PDO('mysql:host=127.0.0.1; dbname=jackdb', 'root');
 
@@ -90,6 +82,13 @@ $about = $result ['about'];
             $about; ?></textarea>
         <input type="submit" value="update">
     </form><br>
+
+    <h4>Logout</h4>
+    <form method="post" action="logout.php">
+        <input type="hidden" name="logout">
+        <input type="submit" value="logout">
+    </form>
+
 </body>
 </html>
 

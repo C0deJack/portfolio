@@ -59,15 +59,16 @@ $result1 = $query1->fetchAll();
 </head>
 <body>
 <h3>Welcome to the Projects Input Page</h3>
-
 <nav>
     <a href="cms.php">Link to About Me Input Page</a><br><br>
 </nav>
 </body>
 </html>
 
-<?php
+<?php echo createProjectForm($result1); ?>
 
-echo createProjectForm($result1);
-
-?>
+<h4>Logout</h4>
+<form method="post" action="logout.php">
+    <input type="hidden" name="logout">
+    <input type="submit" value="logout">
+</form>
