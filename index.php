@@ -159,6 +159,9 @@ $project_link6 = $result1 [5]['project_link'];
             <div><a target="_blank" href="https://github.com/C0deJack">GitHub</a></div>
             <div>Blog</div>
         </div>
+        <div>
+            <a target="_blank" href="login.php">CMS Login</a>
+        </div>
 </footer>
 </body>
 </html>
