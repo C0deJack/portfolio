@@ -16,13 +16,9 @@ if (!empty($_POST)) {
     $query2->execute();
 }
 
-$email_out = $_POST ['email_out'];
-$phone_out = $_POST ['phone_out'];
-$about_out = $_POST ['about_out'];
-
-$query3->bindParam(':email_out', $email_out);
-$query3->bindParam(':phone_out', $phone_out);
-$query3->bindParam(':about_out', $about_out);
+$query3->bindParam(':email_out', $_POST ['email_out']);
+$query3->bindParam(':phone_out', $_POST ['phone_out']);
+$query3->bindParam(':about_out', $_POST ['about_out']);
 
 $query3->execute();
 $query->execute();
@@ -49,9 +45,12 @@ $about = $result ['about'];
     </nav>
 
     <form method="post" action="cms.php">
-        <input type="text" value="<?php echo $email; ?>" name="email_out">email
-        <input type="tel" value="<?php echo $phone; ?>" name="phone_out">Telephone Number<br><br>
-        <textarea rows="12" cols="120"  name="about_out"><?php echo $about; ?></textarea>
+        <input type="text" name="email_out" value="<?php echo $email; ?>">
+        email
+        <input type="tel" name="phone_out" value="<?php echo $phone; ?>">
+        Telephone Number<br><br>
+        <textarea rows="12" cols="120"  name="about_out"><?php echo
+            $about; ?></textarea>
         <input type="submit" value="update">
     </form><br>
 </body>

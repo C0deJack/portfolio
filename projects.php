@@ -16,17 +16,11 @@ $query2= $db->prepare("UPDATE `projects` SET
 `project_img`= :project_img, `project_title`= :project_title, `project_text`= :project_text, 
 `project_link`= :project_link WHERE `id` = :id;");
 
-$project_img = $_POST ['project_img'];
-$project_title = $_POST ['project_title'];
-$project_text = $_POST ['project_text'];
-$project_link = $_POST ['project_link'];
-$id = $_POST ['id'];
-
-$query2->bindParam(':project_img', $project_img);
-$query2->bindParam(':project_title', $project_title);
-$query2->bindParam(':project_text', $project_text);
-$query2->bindParam(':project_link', $project_link);
-$query2->bindParam(':id', $id);
+$query2->bindParam(':project_img', $_POST ['project_img']);
+$query2->bindParam(':project_title', $_POST ['project_title']);
+$query2->bindParam(':project_text', $_POST ['project_text']);
+$query2->bindParam(':project_link', $_POST ['project_link']);
+$query2->bindParam(':id', $_POST ['id']);
 
 $query2->execute();
 
