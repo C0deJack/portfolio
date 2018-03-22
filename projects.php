@@ -24,6 +24,11 @@ $query2->bindParam(':id', $_POST ['id']);
 
 $query2->execute();
 
+/**
+ * Function dynamically creates the project input forms with the given database
+ * @param $result1 - Array from jackdb database
+ * @return string - html code output
+ */
 function createProjectForm($result1)
 {
     $result_output = "";
