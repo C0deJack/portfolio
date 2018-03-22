@@ -20,47 +20,22 @@ $query1= $db->prepare("SELECT `id`, `project_img`,
 $query1->execute();
 $result1= $query1->fetchAll();
 
-//var_dump($result1);
-//
-//function projectInputVariables ($result1) {
-//    $i = 0;
-//    foreach ($result1 as $key => $val ){
-//        $var =
-//
-//            $i++;
-//    }
-//
-//}
-
-$project_img1 = $result1 [0]['project_img'];
-$project_title1 = $result1 [0]['project_title'];
-$project_text1 = $result1 [0]['project_text'];
-$project_link1 = $result1 [0]['project_link'];
-
-$project_img2 = $result1 [1]['project_img'];
-$project_title2 = $result1 [1]['project_title'];
-$project_text2 = $result1 [1]['project_text'];
-$project_link2 = $result1 [1]['project_link'];
-
-$project_img3 = $result1 [2]['project_img'];
-$project_title3 = $result1 [2]['project_title'];
-$project_text3 = $result1 [2]['project_text'];
-$project_link3 = $result1 [2]['project_link'];
-
-$project_img4 = $result1 [3]['project_img'];
-$project_title4 = $result1 [3]['project_title'];
-$project_text4 = $result1 [3]['project_text'];
-$project_link4 = $result1 [3]['project_link'];
-
-$project_img5 = $result1 [4]['project_img'];
-$project_title5 = $result1 [4]['project_title'];
-$project_text5 = $result1 [4]['project_text'];
-$project_link5 = $result1 [4]['project_link'];
-
-$project_img6 = $result1 [5]['project_img'];
-$project_title6 = $result1 [5]['project_title'];
-$project_text6 = $result1 [5]['project_text'];
-$project_link6 = $result1 [5]['project_link'];
+function createProjectArticle($result1)
+{
+$result_output = "";
+foreach ($result1 as $list) {
+    $result_output .=
+        "<article>
+            <div class='img-holder'><img src=' " . $list['project_img'] . " 
+            ' alt='pilot shop screen shot'></div>
+            <div class='txt-holder'>
+            <h3>" . $list['project_title'] . "</h3>
+            <p>" . $list['project_text'] . "</p>
+            </div>
+            </article>";
+}
+    return $result_output;
+}
 
 ?>
 
@@ -102,50 +77,7 @@ $project_link6 = $result1 [5]['project_link'];
 </section>
 <main id="portfolio">
     <div class="portfolio-box">
-        <article>
-            <div class="img-holder"><img src="assets/pilot-shop.png" alt="pilot shop screen shot"></div>
-            <div class="txt-holder">
-                <h3><?php echo $project_title1; ?></h3>
-                <p><?php echo $project_text1; ?></p>
-            </div>
-        </article>
-        <article>
-            <div class="img-holder"><img src="assets/mayden-logo.jpg" alt="mayden academy logo"></div>
-            <div class="txt-holder">
-                <h3><?php echo $project_title2; ?></h3>
-                <p><?php echo $project_text2; ?></p>
-            </div>
-        </article>
-        <article>
-            <div class="img-holder"><video autoplay muted loop playsinline poster="assets/roller-coaster-large.gif" class="portfolio-video">
-                <input type="button" value="Play" onclick="assets/roller-coaster.mp4.play()">
-                <source src="assets/roller-coaster.mp4" type="video/mp4"></div>
-            <div class="txt-holder">
-                <h3><?php echo $project_title3; ?></h3>
-                <p><?php echo $project_text3; ?></p>
-            </div>
-        </article>
-        <article>
-            <div class="img-holder"><img src="assets/place-holder.jpg" alt="computer screen showing code"></div>
-            <div class="txt-holder">
-                <h3><?php echo $project_title4; ?></h3>
-                <p><?php echo $project_text4; ?></p>
-            </div>
-        </article>
-        <article>
-            <div class="img-holder"><video autoplay muted loop playsinline poster="assets/typing.gif" class="portfolio-video">
-                <source src="assets/typing.mp4" type="video/mp4"></div>
-            <div class="txt-holder">
-                <h3><?php echo $project_title5; ?></h3>
-                <p><?php echo $project_text5; ?></p>
-            </div>
-        </article>
-        <article>
-            <div class="img-holder"><img src="assets/ipad.jpg" alt="woman holding an ipad"></div>
-            <div class="txt-holder">
-                <h3><?php echo $project_title6; ?></h3>
-                <p><?php echo $project_text6; ?></p>
-            </div>
+        <?php  echo createProjectArticle($result1); ?>
     </div>
 </main>
 <footer id="contact">
