@@ -3,7 +3,8 @@ session_start ();
 
 require('connect.php');
 require('checkPassword.php');
-require('updateAboutMe.php');
+require('download.php');
+require ('upload.php');
 
 $passwordIn = $_POST['password'];
 $userIn = $_POST['user-name'];

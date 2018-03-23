@@ -2,26 +2,22 @@
 
 session_start();
 require('connect.php');
-require('updateProjects.php');
+require('upload.php');
+require ('download.php');
 
 if ($_SESSION ['logged-in'] !==1) {
     header("Location: login.php");
 }
 
 $db = connect();
-
-$query1= $db->prepare("SELECT `id`, `project_img`, 
-`project_title`,`project_text`, `project_link` FROM `projects` 
-ORDER BY `id` ASC;");
-
-$query1->execute();
-$result1 = $query1->fetchAll();
+$result1 = getProjects($db);
 
 $post = $_POST;
 updateProjects($db,$post);
 
 /**
  * Function dynamically creates the project input forms with the given database
+ *
  * @param $result1 - Array from jackdb database
  * @return string - html code output
  */
@@ -46,8 +42,7 @@ function createProjectForm(array $result1)
     return $result_output;
 }
 
-$query1->execute();
-$result1 = $query1->fetchAll();
+$result1 = getProjects($db);
 
 ?>
 

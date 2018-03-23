@@ -1,21 +1,16 @@
 <?php
+require 'download.php';
+require 'connect.php';
+
 $db = connect();
 
-$query= $db->prepare("SELECT `email`, `phone`, 
-`about` FROM `cms` WHERE `deleted`= '0';");
-
-$query->execute();
-$result= $query->fetch();
+$result = getAboutMe($db);
 
 $email = $result['email'];
 $phone = $result['phone'];
 $about = $result['about'];
 
-$query1= $db->prepare("SELECT `id`, `project_img`, 
-`project_title`, `project_text`, `project_link` FROM `projects`; ");
-
-$query1->execute();
-$result1= $query1->fetchAll();
+$result1 = getProjects($db);
 
 /**
  * Function dynamically creates the project articles with the given database
