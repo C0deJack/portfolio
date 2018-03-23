@@ -1,5 +1,10 @@
 <?php
 
+session_start();
+
+if ($_SESSION ['logged-in'] !==1) {
+    header("Location: login.php");
+}
 require('connect.php');
 require('updateProjects.php');
 
