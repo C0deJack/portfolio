@@ -2,33 +2,23 @@
 session_start ();
 
 require('connect.php');
+require('checkPassword.php');
 
-if (!empty($_POST ['user-name'] && $_POST ['password'])) {
+$passwordIn = $_POST ['password'];
+$userIn = $_POST ['user-name'];
+
+if (!empty($userIn && $passwordIn)) {
 
     $db = connect();
 
-    $userIn = $_POST ['user-name'];
+    $out = getPassword($db, $userIn);
+    $passwordOut = $out['password'];
+    $userOut = $out['user'];
 
-    function checkPassword ($db, $userIn) {
-        $query = $db->prepare("SELECT `password` , `user` FROM `users` WHERE `user`=:user;");
-        $query->bindParam(':user', $userIn);
-        $query->execute();
-        $out = $query->fetch();
-        return $out;
-    }
+    echo verifyPassword($passwordOut, $passwordIn, $userOut);
 
-    $out = checkPassword($db, $userIn);
-    $passwordOut= $out['password'];
-    $userOut= $out['user'];
-
-    if (password_verify($_POST ['password'], $passwordOut)) {
-        $_SESSION ['logged-in'] = 1;
-        echo "Welcome $userOut ! How are you today?";
-    } else {
-        $_SESSION ['logged-in'] = 2;
-        header("Location: login.php");
-    }
-}  elseif ($_SESSION ['logged-in'] !==1) {
+} elseif
+    ($_SESSION ['logged-in'] !== 1){
     header("Location: login.php");
 }
 
