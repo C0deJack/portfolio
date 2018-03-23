@@ -1,27 +1,41 @@
 <?php
 session_start ();
 
+
+/**
+ * Connects to the database for all subsequent sql queries
+ *
+ * @return PDO
+ */
+function connect(){
+    $db = new PDO('mysql:host=127.0.0.1; dbname=jackdb', 'root');
+    $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    return $db;
+}
+
+$db = connect();
+
 if (!empty($_POST ['user-name'] && $_POST ['password'])) {
 
-    $db = new PDO('mysql:host=127.0.0.1; dbname=jackdb', 'root');
+    $db = connect();
 
-    $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,
-        PDO::FETCH_ASSOC);
+    $userIn = $_POST ['user-name'];
 
-    $query = $db->prepare("SELECT `password` , `user` 
-    FROM `users` WHERE `user` LIKE CONCAT('%', :user, '%');");
+    function checkPassword ($db, $userIn) {
+        $query = $db->prepare("SELECT `password` , `user` FROM `users` WHERE `user`=:user;");
+        $query->bindParam(':user', $userIn);
+        $query->execute();
+        $out = $query->fetch();
+        return $out;
+    }
 
-    $query->bindParam(':user', $_POST ['user-name']);
-
-    $query->execute();
-    $out = $query->fetch();
-
+    $out = checkPassword($db, $userIn);
     $passwordOut= $out['password'];
     $userOut= $out['user'];
 
     if (password_verify($_POST ['password'], $passwordOut)) {
         $_SESSION ['logged-in'] = 1;
-        echo "Welcome $userOut !        How are you today?";
+        echo "Welcome $userOut ! How are you today?";
     } else {
         $_SESSION ['logged-in'] = 2;
         header("Location: login.php");
@@ -30,10 +44,7 @@ if (!empty($_POST ['user-name'] && $_POST ['password'])) {
     header("Location: login.php");
 }
 
-$db = new PDO('mysql:host=127.0.0.1; dbname=jackdb', 'root');
-
-$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,
-    PDO::FETCH_ASSOC);
+$db = connect();
 
 $query= $db->prepare("SELECT `email`, `phone`, `about`
 FROM `cms` WHERE `deleted` = 0 ORDER BY `id` DESC LIMIT 1;");
