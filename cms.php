@@ -3,6 +3,7 @@ session_start ();
 
 require('connect.php');
 require('checkPassword.php');
+require('updateAboutMe.php');
 
 $passwordIn = $_POST['password'];
 $userIn = $_POST['user-name'];
@@ -28,26 +29,9 @@ if (!empty($userIn && $passwordIn)) {
 
 $db = connect();
 
-$query= $db->prepare("SELECT `email`, `phone`, `about`
-FROM `cms` WHERE `deleted` = 0 ORDER BY `id` DESC LIMIT 1;");
+updateAboutMe($db, $email_out, $phone_out, $about_out);
 
-$query2= $db->prepare("UPDATE `cms` SET `deleted`= 1;");
-
-$query3= $db->prepare("INSERT INTO `cms` (`email`, `phone`, `about`)
-VALUES (:email_out, :phone_out, :about_out);");
-
-if (!empty($email_out || $phone_out || $about_out)) {
-    $query2->execute();
-}
-
-$query3->bindParam(':email_out', $email_out);
-$query3->bindParam(':phone_out', $phone_out);
-$query3->bindParam(':about_out', $about_out);
-
-$query3->execute();
-$query->execute();
-
-$result = $query->fetch();
+$result = getAboutMe($db);
 
 $email = $result['email'];
 $phone = $result['phone'];
