@@ -1,13 +1,12 @@
 <?php
 session_start();
 
-if ($_SESSION ['logged-in'] == 1) {
-    header("Location: cms.php");
-} elseif ( $_SESSION ['logged-in'] == 2) {
-    echo 'incorrect password or username';
-}  else {
-    echo 'Please enter your user name and password below';
-}
+require 'loginCheck.php';
+
+$session = $_SESSION['logged-in'];
+
+echo loginCheck($session);
+
 ?>
 
 <h3>LOGIN PAGE</h3>

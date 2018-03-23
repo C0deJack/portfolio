@@ -1,27 +1,20 @@
 <?php
-$db = new PDO('mysql:host=127.0.0.1; dbname=jackdb', 'root');
+require 'download.php';
+require 'connect.php';
 
-$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,
-PDO::FETCH_ASSOC);
+$db = connect();
 
-$query= $db->prepare("SELECT `email`, `phone`, 
-`about` FROM `cms` WHERE `deleted`= '0';");
+$result = getAboutMe($db);
 
-$query->execute();
-$result= $query->fetchAll();
+$email = $result['email'];
+$phone = $result['phone'];
+$about = $result['about'];
 
-$email = $result [0]['email'];
-$phone = $result [0]['phone'];
-$about = $result [0]['about'];
-
-$query1= $db->prepare("SELECT `id`, `project_img`, 
-`project_title`, `project_text`, `project_link` FROM `projects`; ");
-
-$query1->execute();
-$result1= $query1->fetchAll();
+$result1 = getProjects($db);
 
 /**
  * Function dynamically creates the project articles with the given database
+ *
  * @param $result1 - Array from jackdb database
  * @return string - html code output
  */

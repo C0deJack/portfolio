@@ -1,31 +1,23 @@
 <?php
 
-$db = new PDO('mysql:host=127.0.0.1; dbname=jackdb', 'root');
+session_start();
+require('connect.php');
+require('upload.php');
+require ('download.php');
 
-$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,
-    PDO::FETCH_ASSOC);
+if ($_SESSION ['logged-in'] !==1) {
+    header("Location: login.php");
+}
 
-$query1= $db->prepare("SELECT `id`, `project_img`, 
-`project_title`,`project_text`, `project_link` FROM `projects` 
-ORDER BY `id` ASC;");
+$db = connect();
+$result1 = getProjects($db);
 
-$query1->execute();
-$result1 = $query1->fetchAll();
-
-$query2= $db->prepare("UPDATE `projects` SET 
-`project_img`= :project_img, `project_title`= :project_title, `project_text`= :project_text, 
-`project_link`= :project_link WHERE `id` = :id;");
-
-$query2->bindParam(':project_img', $_POST ['project_img']);
-$query2->bindParam(':project_title', $_POST ['project_title']);
-$query2->bindParam(':project_text', $_POST ['project_text']);
-$query2->bindParam(':project_link', $_POST ['project_link']);
-$query2->bindParam(':id', $_POST ['id']);
-
-$query2->execute();
+$post = $_POST;
+updateProjects($db,$post);
 
 /**
  * Function dynamically creates the project input forms with the given database
+ *
  * @param $result1 - Array from jackdb database
  * @return string - html code output
  */
@@ -50,8 +42,7 @@ function createProjectForm(array $result1)
     return $result_output;
 }
 
-$query1->execute();
-$result1 = $query1->fetchAll();
+$result1 = getProjects($db);
 
 ?>
 

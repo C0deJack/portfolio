@@ -1,64 +1,42 @@
 <?php
 session_start ();
 
-if (!empty($_POST ['user-name'] && $_POST ['password'])) {
+require('connect.php');
+require('checkPassword.php');
+require('download.php');
+require ('upload.php');
 
-    $db = new PDO('mysql:host=127.0.0.1; dbname=jackdb', 'root');
+$passwordIn = $_POST['password'];
+$userIn = $_POST['user-name'];
 
-    $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,
-        PDO::FETCH_ASSOC);
+$email_out = $_POST['email_out'];
+$phone_out = $_POST['phone_out'];
+$about_out = $_POST['about_out'];
 
-    $query = $db->prepare("SELECT `password` , `user` 
-    FROM `users` WHERE `user` LIKE CONCAT('%', :user, '%');");
+if (!empty($userIn && $passwordIn)) {
 
-    $query->bindParam(':user', $_POST ['user-name']);
+    $db = connect();
 
-    $query->execute();
-    $out = $query->fetch();
+    $out = getPassword($db, $userIn);
+    $passwordOut = $out['password'];
+    $userOut = $out['user'];
 
-    $passwordOut= $out['password'];
-    $userOut= $out['user'];
+    echo verifyPassword($passwordOut, $passwordIn, $userOut);
 
-    if (password_verify($_POST ['password'], $passwordOut)) {
-        $_SESSION ['logged-in'] = 1;
-        echo "Welcome $userOut !        How are you today?";
-    } else {
-        $_SESSION ['logged-in'] = 2;
-        header("Location: login.php");
-    }
-}  elseif ($_SESSION ['logged-in'] !==1) {
+} elseif
+    ($_SESSION['logged-in'] !== 1){
     header("Location: login.php");
 }
 
-$db = new PDO('mysql:host=127.0.0.1; dbname=jackdb', 'root');
+$db = connect();
 
-$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,
-    PDO::FETCH_ASSOC);
+updateAboutMe($db, $email_out, $phone_out, $about_out);
 
-$query= $db->prepare("SELECT `email`, `phone`, `about`
-FROM `cms` WHERE `deleted` = 0 ORDER BY `id` DESC LIMIT 1;");
+$result = getAboutMe($db);
 
-$query2= $db->prepare("UPDATE `cms` SET `deleted`= 1;");
-
-$query3= $db->prepare("INSERT INTO `cms` (`email`, `phone`, `about`)
-VALUES (:email_out, :phone_out, :about_out);");
-
-if (!empty($_POST ['email_out'] && $_POST ['email_out'] && $_POST ['email_out'])) {
-    $query2->execute();
-}
-
-$query3->bindParam(':email_out', $_POST ['email_out']);
-$query3->bindParam(':phone_out', $_POST ['phone_out']);
-$query3->bindParam(':about_out', $_POST ['about_out']);
-
-$query3->execute();
-$query->execute();
-
-$result = $query->fetch();
-
-$email = $result ['email'];
-$phone = $result ['phone'];
-$about = $result ['about'];
+$email = $result['email'];
+$phone = $result['phone'];
+$about = $result['about'];
 
 ?>
 <!DOCTYPE html>
@@ -76,12 +54,9 @@ $about = $result ['about'];
     </nav>
 
     <form method="post" action="cms.php">
-        <input type="text" name="email_out" size="35" value="<?php echo $email; ?>">
-        email
-        <input type="tel" name="phone_out" value="<?php echo $phone; ?>">
-        Telephone Number<br><br>
-        <textarea rows="12" cols="120"  name="about_out"><?php echo
-            $about; ?></textarea>
+        <input type="text" name="email_out" size="35" value="<?php echo $email; ?>">email
+        <input type="tel" name="phone_out" value="<?php echo $phone; ?>">Telephone Number<br><br>
+        <textarea rows="12" cols="120"  name="about_out"><?php echo $about; ?></textarea>
         <input type="submit" value="update">
     </form><br>
 
