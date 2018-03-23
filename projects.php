@@ -1,9 +1,8 @@
 <?php
 
-$db = new PDO('mysql:host=127.0.0.1; dbname=jackdb', 'root');
+require('connect.php');
 
-$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,
-    PDO::FETCH_ASSOC);
+$db = connect();
 
 $query1= $db->prepare("SELECT `id`, `project_img`, 
 `project_title`,`project_text`, `project_link` FROM `projects` 
