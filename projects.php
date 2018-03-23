@@ -1,12 +1,12 @@
 <?php
 
 session_start();
+require('connect.php');
+require('updateProjects.php');
 
 if ($_SESSION ['logged-in'] !==1) {
     header("Location: login.php");
 }
-require('connect.php');
-require('updateProjects.php');
 
 $db = connect();
 
@@ -18,7 +18,6 @@ $query1->execute();
 $result1 = $query1->fetchAll();
 
 $post = $_POST;
-
 updateProjects($db,$post);
 
 /**
