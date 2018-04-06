@@ -49,8 +49,8 @@ $result1 = getProjects($db);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="normalize.css" type="text/css" media="screen">
-    <link rel="stylesheet" type="text/css" href="cms.css">
+    <link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/cms.css">
     <title>Portfolio Input Page</title>
 </head>
 <body>

@@ -40,8 +40,8 @@ foreach ($result1 as $list) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="normalize.css" type="text/css" media="screen">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Jack Wood-Pearce</title>
 </head>
