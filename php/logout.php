@@ -9,4 +9,4 @@ session_destroy();
 
 <a href="login.php">Click here to log back in</a><br><br>
 
-<a href="index.php">Or click here to go back to the Portfolio</a>
+<a href="../index.php">Or click here to go back to the Portfolio</a>

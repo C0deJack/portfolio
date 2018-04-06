@@ -4,7 +4,7 @@ session_start ();
 require('connect.php');
 require('checkPassword.php');
 require('download.php');
-require ('upload.php');
+require('upload.php');
 
 $passwordIn = $_POST['password'];
 $userIn = $_POST['user-name'];
@@ -42,8 +42,8 @@ $about = $result['about'];
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen">
-    <link rel="stylesheet" type="text/css" href="css/cms.css">
+    <link rel="stylesheet" href="../css/normalize.css" type="text/css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../css/cms.css">
     <title>Portfolio Input Page</title>
 </head>
 <body>

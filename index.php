@@ -1,6 +1,6 @@
 <?php
-require 'download.php';
-require 'connect.php';
+require 'php/download.php';
+require 'php/connect.php';
 
 $db = connect();
 
@@ -90,7 +90,7 @@ foreach ($result1 as $list) {
             <div>Blog</div>
         </div>
         <div>
-            <a target="_blank" href="login.php">CMS Login</a>
+            <a target="_blank" href="php/login.php">CMS Login</a>
         </div>
 </footer>
 </body>

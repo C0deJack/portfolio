@@ -3,7 +3,7 @@
 session_start();
 require('connect.php');
 require('upload.php');
-require ('download.php');
+require('download.php');
 
 if ($_SESSION ['logged-in'] !==1) {
     header("Location: login.php");
@@ -49,8 +49,8 @@ $result1 = getProjects($db);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen">
-    <link rel="stylesheet" type="text/css" href="css/cms.css">
+    <link rel="stylesheet" href="../css/normalize.css" type="text/css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../css/cms.css">
     <title>Portfolio Input Page</title>
 </head>
 <body>
