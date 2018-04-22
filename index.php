@@ -23,8 +23,9 @@ function createProjectArticle(array $result1)
 $result_output = "";
 foreach ($result1 as $list) {
     $result_output .=
-        "<article>
+        "<article id='temp'>
             <div class='img-holder'> " . $list['project_img'] . " 
+            <div id='linkPopup' class='slideHidden'>LINK TO PROJECT </div>
             </div>
             <div class='txt-holder'>
             <h3>" . $list['project_title'] . "</h3>
@@ -43,6 +44,7 @@ foreach ($result1 as $list) {
     <link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/animations.js" defer></script>
     <title>Jack Wood-Pearce</title>
 </head>
 <body>

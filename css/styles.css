@@ -129,6 +129,7 @@ h3 a{
 section {
     background-color: #FFDD30;
     position: relative;
+    margin-bottom: 30px;
 }
 
 section div {
@@ -164,25 +165,30 @@ section img {
 main {
     width: 100%;
     padding-top: 80px;
+    position: relative;
 }
 
 .portfolio-box {
     width: 1700px;
     overflow: auto;
     margin: 0 auto;
+    position: relative;
 }
 
 article {
     height: 400px;
-    width: 33%;
+    width: 25%;
     float: left;
-    margin-bottom: 65px;
+    margin: 5px 10px 45px;
+    background-color: #f8f8f8;
 }
 
 .img-holder {
     width: 390px;
     height: 260px;
     margin: 0 auto;
+    margin-top: 10px;
+    overflow: hidden;
 }
 
 .txt-holder {
@@ -230,6 +236,23 @@ footer a:hover {
     color: #ABB2B9;
 }
 
+/*=====================ANIMATIONS========================*/
+
+.slideHidden {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    transition: .3s  ease-in-out;
+    color: #ffffff;
+    font-size: 2rem;
+}
+
+.slideUp {
+    transform: translateY(-100%);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
 /*=====================RESPONSIVE========================*/
 
 @media screen and (max-width: 1400px){
@@ -239,7 +262,7 @@ footer a:hover {
 
     }
     article {
-        width: 50%;
+        width: 47%;
     }
 
 }
