@@ -99,6 +99,11 @@ h3 {
     margin: 5px 0;
 }
 
+h3 a{
+    text-decoration: none;
+    color: inherit;
+}
+
 .side-tab {
     position: fixed;
     width: 65px;

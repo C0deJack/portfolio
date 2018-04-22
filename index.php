@@ -55,7 +55,8 @@ foreach ($result1 as $list) {
     </nav>
     <div class="phone">
         <h3><?php echo $phone; ?></h3>
-        <h3><?php echo $email; ?></h3>
+        <h3><a  href="mailto:<?php echo $email; ?>?Subject=Website%20enquiry"
+                target="_blank"><?php echo $email; ?></a></h3>
     </div>
     <a href="#home" class="side-tab"><img src="assets/up-arrow.png" alt="up arrow"></a>
 </header>
@@ -82,12 +83,13 @@ foreach ($result1 as $list) {
         <div class="contact-box">
             <div class="contact-head">Contact me:</div>
             <div><?php echo $phone; ?></div>
-            <div><?php echo $email; ?></div>
+            <a  href="mailto:<?php echo $email; ?>?Subject=Website%20enquiry"
+               target="_blank"><?php echo $email; ?></a>
         </div >
         <div class="contact-box">
             <div class="contact-head">Follow me:</div>
             <div><a target="_blank" href="https://github.com/C0deJack">GitHub</a></div>
-            <div>Blog</div>
+            <div><a target="_blank" href="https://maydenacademy.co.uk/progressive-web-apps-the-best-thing-since-sliced-bread/">Blog</a></div>
         </div>
         <div>
             <a target="_blank" href="php/login.php">CMS Login</a>
