@@ -27,15 +27,21 @@ function createProjectForm(array $result1)
     foreach ($result1 as $list) {
         $result_output .=  "<form method='post' action='projects.php'>
     <input type='hidden' name='id' value='" . $list['id'] . "'>" . $list['id'] . "
-    <input type='text' class='project_form' size='35' value='" . $list ['project_title'] . "
-    ' name='project_title'>Project Title (max 100 characters)
-    <textarea rows='6' cols='80' class='project_form' 
+    <h5>Project Title (max 100 characters)</h5>
+    <input type='text' class='project_form' size='60' value='" . $list ['project_title'] . "
+    ' name='project_title'>
+    <h5>Project Description (max 2000 characters)</h5>
+    <textarea rows='6' cols='60' class='project_form' 
     name='project_text'>" . $list ['project_text'] . "</textarea>
-    Project Description (max 2000 characters)
-    <input type='text' class='project_form' size='35' value='" . $list ['project_img'] . "
-    ' name='project_img'>Image file name
-    <input type='text' class='project_form' size='35' value='" . $list ['project_link'] . "
-    ' name='project_link'>Project link URL
+    <h5>Image file name</h5>
+    <input type='text' class='project_form' size='60' value='" . $list ['project_img'] . "
+    ' name='project_img'>
+    <h5>Project link URL</h5>
+    <input type='text' class='project_form' size='60' value='" . $list ['project_link'] . "
+    ' name='project_link'>
+    <h5>GitHub link URL</h5>
+    <input type='text' class='project_form' size='60' value='" . $list ['github_link'] . "
+    ' name='github_link'>
     <input type='submit' value='update'>
     </form>";
     }
@@ -55,6 +61,11 @@ $result1 = getProjects($db);
 </head>
 <body>
 <h3>Welcome to the Projects Input Page</h3>
+<h4>Logout</h4>
+<form method="post" action="logout.php">
+    <input type="hidden" name="logout">
+    <input type="submit" value="logout">
+</form>
 <nav>
     <a href="cms.php">Link to About Me Input Page</a><br><br>
 </nav>
@@ -63,8 +74,3 @@ $result1 = getProjects($db);
 
 <?php echo createProjectForm($result1); ?>
 
-<h4>Logout</h4>
-<form method="post" action="logout.php">
-    <input type="hidden" name="logout">
-    <input type="submit" value="logout">
-</form>
