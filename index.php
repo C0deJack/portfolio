@@ -3,14 +3,13 @@ require 'php/download.php';
 require 'php/connect.php';
 
 $db = connect();
-
 $result = getAboutMe($db);
+$result1 = getProjects($db);
 
 $email = $result['email'];
 $phone = $result['phone'];
 $about = $result['about'];
 
-$result1 = getProjects($db);
 
 /**
  * Function dynamically creates the project articles with the given database
@@ -23,13 +22,21 @@ function createProjectArticle(array $result1)
 $result_output = "";
 foreach ($result1 as $list) {
     $result_output .=
-        "<article id='temp'>
-            <div class='img-holder'> " . $list['project_img'] . " 
-            <div id='linkPopup' class='slideHidden'>LINK TO PROJECT </div>
+        "<article class='projectHolder'>
+           <div class='img-holder'>  
+                <img src= " . $list['project_img'] . " alt='" . $list['project_altImgText'] . "'>
+                <div id='linkPopup' class='linkPopup slideHidden'>
+                    <div class='linkBox'>
+                    <a target=\"_blank\" href=" . $list['project_link'] . ">LINK TO PROJECT</a>
+                    </div>
+                    <div class='linkBox'>
+                    <a target=\"_blank\" href=" . $list['github_link'] . ">LINK TO GITHUB</a>
+                    </div>
+                </div>
             </div>
             <div class='txt-holder'>
-            <h3>" . $list['project_title'] . "</h3>
-            <p>" . $list['project_text'] . "</p>
+                <h3>" . $list['project_title'] . "</h3>
+                <p>" . $list['project_text'] . "</p>
             </div>
             </article>";
 }
@@ -62,8 +69,8 @@ foreach ($result1 as $list) {
     </div>
     <a href="#home" class="side-tab"><img src="assets/up-arrow.png" alt="up arrow"></a>
 </header>
-<section>
-    <div id="about">
+<section id="about">
+    <div>
         <?php echo $about; ?>
     </div>
     <div class="icons">
@@ -74,6 +81,10 @@ foreach ($result1 as $list) {
         <div><img src="assets/icons8-nodejs.png" alt="node icon"></div>
         <div><img src="assets/scrum.png" alt="scrum icon"></div>
         <div><img src="assets/mayden-logo-small.png" alt="mayden academy icon"></div>
+        <div><img src="assets/mysql.png" alt="My SQL icon"></div>
+        <div><img src="assets/phpstorm.png" alt="Php Storm icon"></div>
+        <div><img src="assets/sass.png" alt="Sass icon"></div>
+        <div><img src="assets/PHP.png" alt="PHP icon"></div>
     </div>
 </section>
 <main id="portfolio">
@@ -91,10 +102,11 @@ foreach ($result1 as $list) {
         <div class="contact-box">
             <div class="contact-head">Follow me:</div>
             <div><a target="_blank" href="https://github.com/C0deJack">GitHub</a></div>
-            <div><a target="_blank" href="https://maydenacademy.co.uk/progressive-web-apps-the-best-thing-since-sliced-bread/">Blog</a></div>
+            <div><a target="_blank" href="https://maydenacademy.co.uk/
+            progressive-web-apps-the-best-thing-since-sliced-bread/">Blog</a></div>
         </div>
         <div>
-            <a target="_blank" href="php/login.php">CMS Login</a>
+            <a class="cmsLogin" target="_blank" href="php/login.php">CMS LOGIN</a>
         </div>
 </footer>
 </body>
