@@ -325,12 +325,12 @@ color: #FFDD30;
 @media screen and (max-width: 730px){
 
     h1 {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
     }
 
     h2 {
         top: 40px;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     .contact-box {
@@ -356,10 +356,6 @@ color: #FFDD30;
         width: 11%;
     }
 
-    .phone {
-        top: 440px;
-    }
-
     article {
         width: 100%;
     }
@@ -374,8 +370,8 @@ color: #FFDD30;
     }
 
     .phone {
-       left: 50px;
-        top: 500px;
+        left: 50px;
+        top: 440px;
         -ms-transform: rotate(-0deg);
         -webkit-transform: rotate(-0deg);
         transform: rotate(-0deg);
