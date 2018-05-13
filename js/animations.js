@@ -4,7 +4,6 @@ hiddenConsoleLogMessage()
 
 function displayLinkPopup() {
     let projectHolder = Array.from(document.getElementsByClassName('projectHolder'))
-
     projectHolder.forEach(function (element) {
         element.addEventListener("mouseover", function () {
             element.children[0].children[1].classList.add('slideUp')
@@ -28,9 +27,6 @@ function smoothScroll() {
     })
 })
 }
-
-var module = document.getElementsByTagName('p');
-$clamp(module, {clamp: 3});
 
 function hiddenConsoleLogMessage() {
     let log = Function.prototype.bind.call(console.log, console)

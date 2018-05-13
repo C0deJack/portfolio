@@ -10,14 +10,30 @@ body {
 
 /*=====================HEADER - NAV========================*/
 
+.top {
+    position: fixed;
+    top: 0;
+    background-color: #EAECEE;
+    height: 58px;
+    width: 100%;
+    z-index: 10;
+}
+
 h1 {
     position: fixed;
     font-size: 1.9rem;
     padding: 10px;
     margin: 0;
     left: 15px;
-    top: 10px;
+    top: 5px;
     z-index: 5;
+}
+
+h2 {
+    position: absolute;
+    top: 36px;
+    left: 26px;
+    font-size: 1.367rem;
 }
 
 h1 a {
@@ -51,6 +67,7 @@ nav {
     transition: .8s;
     transition-timing-function: ease-in-out;
     background-color: #FFDD30;
+    transform: translate(-50%, 0);
 }
 
 [class|=nav] a {
@@ -60,17 +77,17 @@ nav {
 
 .nav-portfolio {
     top: 180px;
-    left: 42%;
+    left: 50%;
 }
 
 .nav-about {
-    top: 280px;
-    left: 11%;
+    top: 315px;
+    left: 18%;
 }
 
 .nav-contact {
-    top: 280px;
-    left: 71%;
+    top: 315px;
+    left: 82%;
 }
 
 [class|=nav]:hover {
@@ -86,7 +103,7 @@ nav {
 .phone {
     position: absolute;
     right: -70px;
-    top: 125px;
+    top: 160px;
     font-size: 1.01rem;
     -ms-transform: rotate(-90deg);
     -webkit-transform: rotate(-90deg);
@@ -143,22 +160,22 @@ section div {
 }
 
 .icons {
-    margin: 0 auto;
-    width: 80%;
     padding: 25px;
 }
 
 .icons div {
     display: inline-block;
-    width: 13%;
-    height: 100%;
+    position: relative;
+    width: 12%;
+    height: auto;
     padding: 0;
 }
 
 section img {
-    height: 70px;
-    width: 70px;
-    margin: 0 auto;
+    max-height: 70px;
+    max-width: 70px;
+    height: 100%;
+    width: 100%;
 }
 
 /*=====================MAIN - PORTFOLIO========================*/
@@ -292,7 +309,7 @@ color: #FFDD30;
     }
 
     .icons div {
-        width: 18%;
+        width: 12%;
     }
 
 }
@@ -314,17 +331,16 @@ color: #FFDD30;
 
     .nav-portfolio {
         top: 120px;
-        left: 28%;
     }
 
     .nav-about {
         top: 220px;
-        left: 2%;
+        left: 25%;
     }
 
     .nav-contact {
         top: 220px;
-        left: 52%;
+        left: 75%;
     }
 
     article {

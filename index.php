@@ -51,13 +51,17 @@ foreach ($result1 as $list) {
     <link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
     <script src="js/animations.js" defer></script>
     <title>Jack Wood-Pearce</title>
 </head>
 <body>
 <header id="home">
+    <div class="top">
     <h1><a href="#home">JACK WOOD-PEARCE</a></h1>
+    </div>
     <nav>
+        <h2>FULL-STACK WEB DEVELOPER</h2>
         <a href="#portfolio"><div class="nav-portfolio">PORTFOLIO</div></a>
         <a href="#about"><div class="nav-about">ABOUT</div></a>
         <a href="#contact"><div class="nav-contact">CONTACT</div></a>
@@ -72,19 +76,21 @@ foreach ($result1 as $list) {
 <section id="about">
     <div>
         <?php echo $about; ?>
-    </div>
     <div class="icons">
-        <div><img src="assets/icons8-html.png" alt="html icon"></div>
+        <div><img  src="assets/icons8-html.png" alt="html 5 icon"></div>
         <div><img src="assets/icons8-css3.png" alt="css 3 icon"></div>
         <div><img src="assets/PWA.png" alt="pwa icon"></div>
         <div><img src="assets/github.png" alt="github icon"></div>
         <div><img src="assets/icons8-nodejs.png" alt="node icon"></div>
         <div><img src="assets/scrum.png" alt="scrum icon"></div>
-        <div><img src="assets/mayden-logo-small.png" alt="mayden academy icon"></div>
+        <div><img src="assets/mayden-logo-small.png" alt="mayden academy"></div>
         <div><img src="assets/mysql.png" alt="My SQL icon"></div>
         <div><img src="assets/phpstorm.png" alt="Php Storm icon"></div>
         <div><img src="assets/sass.png" alt="Sass icon"></div>
         <div><img src="assets/PHP.png" alt="PHP icon"></div>
+        <div><img src="assets/react.png" alt="PHP icon"></div>
+        <div><img src="assets/angularjs.png" alt="PHP icon"></div>
+        <div><img src="assets/js.png" alt="PHP icon"></div>
     </div>
 </section>
 <main id="portfolio">
