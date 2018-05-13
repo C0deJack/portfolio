@@ -28,7 +28,7 @@ FROM `cms` WHERE `deleted` = 0;");
 function getProjects($db)
 {
     $query1 = $db->prepare("SELECT `id`, `project_img`, `project_altImgText`,
-`project_title`, `project_text`, `project_link`, `github_link` FROM `projects` 
+`project_title`, `project_text`, `project_link`, `github_link`, `title_link` FROM `projects` 
 ORDER BY `id` ASC;");
 
     $query1->execute();

@@ -42,6 +42,9 @@ function createProjectForm(array $result1)
     <h5>GitHub link URL</h5>
     <input type='text' class='project_form' size='60' value='" . $list ['github_link'] . "
     ' name='github_link'>
+        <h5>Title link URL</h5>
+    <input type='text' class='project_form' size='60' value='" . $list ['title_link'] . "
+    ' name='title_link'>
     <input type='submit' value='update'>
     </form>";
     }

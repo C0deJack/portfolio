@@ -10,6 +10,34 @@ $email = $result['email'];
 $phone = $result['phone'];
 $about = $result['about'];
 
+/**
+ * Displays the link in the popup if there is a link in the db
+ *
+ * @param $listLinkItem
+ * @return string
+ */
+function displayIfProjectLinkIsThere ($listLinkItem) {
+     if ($listLinkItem) {
+         return "<div class='linkBox'>
+                    <a target=\"_blank\" href=" . $listLinkItem . ">PROJECT LINK</a>
+                    </div>";
+     } else return "";
+ }
+
+/**
+ * Displays the link in the popup if there is a link in the db
+ *
+ * @param $listLinkItem
+ * @return string
+ */
+function displayIfGithubLinkIsThere ($listLinkItem) {
+     if ($listLinkItem) {
+         return "<div class='linkBox'>
+                    <a target=\"_blank\" href=" . $listLinkItem . ">GITHUB LINK</a>
+                    </div>";
+     } else return "";
+ }
+
 
 /**
  * Function dynamically creates the project articles with the given database
@@ -20,22 +48,18 @@ $about = $result['about'];
 function createProjectArticle(array $result1)
 {
 $result_output = "";
-foreach ($result1 as $list) {
+foreach ($result1 as $key => $list) {
     $result_output .=
         "<article class='projectHolder'>
            <div class='img-holder'>  
                 <img src= " . $list['project_img'] . " alt='" . $list['project_altImgText'] . "'>
-                <div id='linkPopup' class='linkPopup slideHidden'>
-                    <div class='linkBox'>
-                    <a target=\"_blank\" href=" . $list['project_link'] . ">LINK TO PROJECT</a>
-                    </div>
-                    <div class='linkBox'>
-                    <a target=\"_blank\" href=" . $list['github_link'] . ">LINK TO GITHUB</a>
-                    </div>
-                </div>
+                <div id='linkPopup' class='linkPopup slideHidden'>"
+                . displayIfProjectLinkIsThere($list['project_link'])
+                . displayIfGithubLinkIsThere($list['github_link']) .
+                " </div>
             </div>
             <div class='txt-holder'>
-                <h3>" . $list['project_title'] . "</h3>
+                <h3><a target=\"_blank\" href=" . $list['title_link'] . ">" . $list['project_title'] . "</a></h3>
                 <p>" . $list['project_text'] . "</p>
             </div>
             </article>";
