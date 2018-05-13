@@ -283,7 +283,7 @@ footer a:hover {
 
 .linkBox{
     font-size: 1.3rem;
-    float: left;
+    display: inline-block;
     width: 50%;
     height: 100%;
     padding: 30% 10% 20% 10%;
@@ -324,6 +324,15 @@ color: #FFDD30;
 
 @media screen and (max-width: 730px){
 
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    h2 {
+        top: 40px;
+        font-size: 1.2rem;
+    }
+
     .contact-box {
         width: 100%;
         padding: 30px;
@@ -343,8 +352,20 @@ color: #FFDD30;
         left: 75%;
     }
 
+    .icons div {
+        width: 11%;
+    }
+
+    .phone {
+        top: 440px;
+    }
+
     article {
         width: 100%;
+    }
+
+    header {
+        height: 540px;
     }
 
     .txt-holder {
