@@ -74,7 +74,8 @@ foreach ($result1 as $key => $list) {
 <head>
     <link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" name="viewport" />
     <meta name="format-detection" content="telephone=no">
     <script src="js/animations.js" defer></script>
     <title>Jack Wood-Pearce</title>

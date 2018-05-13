@@ -6,6 +6,9 @@ body {
     margin: 0;
     font-family: "Futura", Futura, Helvetica, Arial, sans-serif;
     font-size: 10px;
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
 }
 
 /*=====================HEADER - NAV========================*/
