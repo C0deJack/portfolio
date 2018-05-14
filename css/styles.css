@@ -6,9 +6,9 @@ body {
     margin: 0;
     font-family: "Futura", Futura, Helvetica, Arial, sans-serif;
     font-size: 10px;
-    max-width: 100%;
+    width: 100%;
     overflow-x: hidden;
-    position: relative;
+    overflow-x: -moz-hidde-unscrollable;
 }
 
 /*=====================HEADER - NAV========================*/
@@ -212,18 +212,47 @@ article {
     overflow: hidden;
 }
 
+article h3 a{
+    text-decoration: none;
+    color: inherit;
+}
+
+article h3 a:hover{
+    color: #ABB2B9;
+}
+
 .txt-holder {
     display: block;
+    position: relative;
     width: 95%;
     margin: 0 auto;
     font-size: 1.1rem;
     line-height: 1.15rem;
     overflow: hidden;
-    height: 85px;
+    height: 78px;
 }
 
 .txt-holder p {
     font-size: .85rem;
+}
+
+.fade-box {
+    position: absolute;
+    right: 0;
+    bottom: -2%;
+    height: 23px;
+    line-height: 0;
+    padding: 0 0 0 50px;
+    background: -webkit-linear-gradient(180deg, #ffffff 60%, transparent);
+}
+
+.read-more a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.read-more a:hover{
+    color: #ABB2B9;
 }
 
 main img {
@@ -300,7 +329,6 @@ footer a:hover {
 
 .linkBox a:hover{
 color: #FFDD30;
-
 }
 
 /*=====================RESPONSIVE========================*/
