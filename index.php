@@ -61,9 +61,6 @@ foreach ($result1 as $key => $list) {
             <div class='txt-holder'>
                 <h3><a target=\"_blank\" href=" . $list['title_link'] . ">" . $list['project_title'] . "</a></h3>
                 <p>" . $list['project_text'] . "</p>
-               <span class='fade-box'>
-                    <p class=\"read-more\"><a href=". $list['title_link'] ." class=\"button\">...more</a></p>
-               </span>
             </div>
             </article>";
 }
