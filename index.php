@@ -134,8 +134,7 @@ foreach ($result1 as $key => $list) {
         <div class="contact-box">
             <div class="contact-head">Follow me:</div>
             <div><a target="_blank" href="https://github.com/C0deJack">GitHub</a></div>
-            <div><a target="_blank" href="https://maydenacademy.co.uk/
-            progressive-web-apps-the-best-thing-since-sliced-bread/">Blog</a></div>
+            <div><a target="_blank" href="https://maydenacademy.co.uk/progressive-web-apps-the-best-thing-since-sliced-bread/">Blog</a></div>
         </div>
         <div>
             <a class="cmsLogin" target="_blank" href="php/login.php">CMS LOGIN</a>
