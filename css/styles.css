@@ -169,7 +169,7 @@ section div {
 .icons div {
     display: inline-block;
     position: relative;
-    width: 12%;
+    width: 13%;
     height: auto;
     padding: 0;
 }
@@ -321,7 +321,7 @@ color: #FFDD30;
     }
 
     .icons div {
-        width: 12%;
+        width: 13%;
     }
 
 }
@@ -365,7 +365,7 @@ color: #FFDD30;
     }
 
     .icons div {
-        width: 11%;
+        width: 12%;
     }
 
     article {

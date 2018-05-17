@@ -74,6 +74,7 @@ foreach ($result1 as $key => $list) {
 <head>
     <link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="icon" type="image/x-icon" href="https://dev.maydenacademy.co.uk/students/2018/jack/portfolio/favicon.ico" />
     <meta content="yes" name="apple-mobile-web-app-capable" />
     <meta content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" name="viewport" />
     <meta name="format-detection" content="telephone=no">
